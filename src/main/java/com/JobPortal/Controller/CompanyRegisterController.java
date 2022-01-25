@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.JobPortal.DaoImpl.CompanyProfileDaoImpl;
-import com.JobPortal.DaoImpl.User_InfoDAOImpl;
+
 import com.JobPortal.Model.CompanyModel;
-import com.JobPortal.Model.User_Info;
+
 
 
 @WebServlet("/CompanyRegisterController")

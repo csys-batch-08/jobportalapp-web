@@ -3,16 +3,15 @@ package com.JobPortal.Controller;
 import java.io.IOException;
 import java.util.Date;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.JobPortal.DaoImpl.CompanyProfileDaoImpl;
+
 import com.JobPortal.DaoImpl.PostJobDaoImpl;
-import com.JobPortal.Model.CompanyModel;
+
 import com.JobPortal.Model.PostJobModel;
 
 @WebServlet("/PostJobController")

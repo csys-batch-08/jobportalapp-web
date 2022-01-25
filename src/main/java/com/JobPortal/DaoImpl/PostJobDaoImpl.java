@@ -5,13 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 import java.util.Scanner;
 
 import com.JobPortal.Connection.ConnectionUtil;
 import com.JobPortal.Dao.PostJobInterface;
-import com.JobPortal.Model.ApplyJob;
+
 import com.JobPortal.Model.PostJobModel;
 
 
@@ -36,36 +36,9 @@ Scanner sc = new Scanner(System.in);
 					
 		stmt.executeUpdate();
 		System.out.println("Job Post Successfully");
-		//System.out.println(str2.getCompanyId());
+		
 	}
-//	public void deleteJob(PostJobModel st) throws ClassNotFoundException, SQLException {
-//		
-//		Connection con= ConnectionUtil.getDBconnection();
-//		String queries = "delete from posting_job where post_id=?";
-//		PreparedStatement stmt= con.prepareStatement(queries);
-//		stmt.setInt(1, st.getPostId());
-//		
-//		stmt.executeUpdate();
-//	}
-	
-// public void postJob() throws ClassNotFoundException, SQLException {
-//		 
-//		 
-//		 String query ="select * from posting_job";
-//		 
-//		 Connection con=ConnectionUtil.getDBconnection();
-//		 PreparedStatement ps =con.prepareStatement(query);
-//		 
-//		 ResultSet rs=ps.executeQuery();
-//		 		
-//		 while(rs.next())
-//		 {
-//			 
-//		 System.out.println("\n" +"Companyid :  \t " +rs.getInt(1)+"\n" +"Post ID :  \t"+rs.getInt(2)+"\n"+"job title : \t"+rs.getString(3)+"\n"+"Salary :  \t"+rs.getInt(4)+"\n"
-//		+"Experience : \t" +rs.getString(5)+"\n"+"Category : \t"+rs.getString(6));
-//		 }
-//		
-//}
+
  public List<PostJobModel> showJobs() throws ClassNotFoundException, SQLException {
 	 
 	 
@@ -134,66 +107,7 @@ public void deletePostJob(int postId ) throws ClassNotFoundException, SQLExcepti
 	}
 	
 	
-// public void searchBySalary(int salary ) throws ClassNotFoundException, SQLException {
-//		 
-//		 
-//		 String query ="select p.company_id,c.company_name,p.post_id,p.job_title from posting_job p ,Company_login where c.company_id=p.company_id and p.salary = ? "; 
-//		 Connection con=ConnectionUtil.getDBconnection();
-//		 PreparedStatement ps =con.prepareStatement(query);
-//		 
-//		 ps.setInt(1, salary );
-//		 
-//		 ResultSet rs=ps.executeQuery();
-//		 		
-//		 while(rs.next())
-//		 {
-//			 
-//		 System.out.println("\n" +"CompanyId : " +rs.getInt(1)+"\n" +"Company name :  "+rs.getString(2)+"\n"+"Post Id : "+rs.getInt(3)+"\n"+"Job Title : "+rs.getString(4));
-//		 }
-//		
-//		
-//}
-// 
- 
-// public void searchByExperience(String experience ) throws ClassNotFoundException, SQLException {
-//	 
-//	 
-//	 String query ="select p.company_id,c.company_name,p.post_id,p.job_title,p.salary  from posting_job p ,Company_login c\r\n"
-//	 		+ "where c.company_id=p.company_id and p.experience = ?";
-//	 Connection con=ConnectionUtil.getDBconnection();
-//	 PreparedStatement ps =con.prepareStatement(query);
-//	 
-//		 ps.setString(1, experience);
-//	 
-//	 ResultSet rs=ps.executeQuery();
-//	 		
-//	 while(rs.next())
-//	 {
-//		 
-//	 System.out.println("\n" +"CompanyId :   " +rs.getInt(1)+"\n" +"Company name :  "+rs.getString(2)+"\n"+"Post Id : "+rs.getInt(3)+"Job Title : "+rs.getString(4)+"\n"+"Salary :   " +rs.getInt(5));
-//	 }
-//	
-//}
- 
-// public void searchByLocation(String location1 ) throws ClassNotFoundException, SQLException {
-//	 
-//	 
-//	 String query ="select p.company_id,c.company_name,p.post_id,p.job_title,p.salary  from posting_job p ,Company_login c\r\n"
-//	 		+ "where c.company_id=p.company_id and c.location = ?";
-//	
-//	 Connection con=ConnectionUtil.getDBconnection();
-//	 PreparedStatement ps =con.prepareStatement(query);
-//	 
-//		 ps.setString(1, location1);
-//	 
-//	 ResultSet rs=ps.executeQuery();
-//	 		
-//	 while(rs.next())
-//	 {
-//		 
-//	 System.out.println("\n" +"CompanyId :   " +rs.getInt(1)+"\n" +"Company name :  "+rs.getString(2)+"\n"+"Post Id : "+rs.getInt(3)+"\n"+"Job Title : "+rs.getString(4)+"\n"+"Salary :   " +rs.getInt(5));
-//	 }
-// }
+
 public List<PostJobModel> SearchJobs(String Location) throws ClassNotFoundException, SQLException {
 	 
 	 
@@ -291,25 +205,7 @@ public List<PostJobModel> SearchCom(String company) throws ClassNotFoundExceptio
 	 return viewJobs;
 }
  
-//public void searchByCompany(String CompanyName ) throws ClassNotFoundException, SQLException {
-//	 
-//	 
-//	 String query ="select p.company_id,c.company_name,p.post_id,p.job_title,p.salary  from posting_job p ,Company_login where c.company_id=p.company_id and c.company_name = ?";
-//	 		
-//	
-//	 Connection con=ConnectionUtil.getDBconnection();
-//	 PreparedStatement ps =con.prepareStatement(query);
-//	 
-//		 ps.setString(1, CompanyName);
-//	 
-//	 ResultSet rs=ps.executeQuery();
-//	 		
-//	 while(rs.next())
-//	 {
-//		 
-//	 System.out.println("\n" +"CompanyId :   " +rs.getInt(1)+"\n" +"Company name :  "+rs.getString(2)+"\n"+"Post Id : "+rs.getInt(3)+"\n"+"Job Title : "+rs.getString(4)+"\n"+"Salary :   " +rs.getInt(5));
-//	 }
-// }
+
 
 @Override
 public void postJob() throws ClassNotFoundException, SQLException {

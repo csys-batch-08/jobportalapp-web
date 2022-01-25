@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.JobPortal.DaoImpl.JobStatusDaoImpl;
-import com.JobPortal.DaoImpl.User_InfoDAOImpl;
+
 import com.JobPortal.Model.JobStatusModel;
-import com.JobPortal.Model.User_Info;
+
 
 @WebServlet("/UpdateApplicantStatus")
 public class UpdateApplicantStatus extends HttpServlet {

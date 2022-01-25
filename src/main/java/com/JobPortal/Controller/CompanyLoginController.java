@@ -1,8 +1,7 @@
 package com.JobPortal.Controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.JobPortal.DaoImpl.CompanyProfileDaoImpl;
-import com.JobPortal.DaoImpl.User_InfoDAOImpl;
-import com.JobPortal.Model.CompanyModel;
-import com.JobPortal.Model.PostJobModel;
+
 
 
 @WebServlet("/CompanyLoginController")

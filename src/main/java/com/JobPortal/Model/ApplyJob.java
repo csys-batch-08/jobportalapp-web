@@ -1,7 +1,7 @@
 package com.JobPortal.Model;
 
 import java.sql.Date;
-import java.time.LocalDate;
+
 
 public class ApplyJob {
 	

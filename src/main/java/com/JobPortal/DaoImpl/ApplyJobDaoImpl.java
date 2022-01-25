@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 import com.JobPortal.Connection.ConnectionUtil;
 import com.JobPortal.Dao.ApplyJobInterface;
@@ -54,7 +54,6 @@ public class ApplyJobDaoImpl implements ApplyJobInterface{
 		
 		 while(rs.next())
 		 {
-		//	applicants= new ApplyJob(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6),rs.getString(8),rs.getString(9),rs.getLong(10),rs.getDate(11));
 			applicants= new ApplyJob(rs.getInt("Applicant_id"),rs.getInt("Post_id"),rs.getString("Applicant_name"),rs.getString("Qualification"),rs.getInt("Age"),rs.getString("Email"),rs.getString("Address"),rs.getLong("Phone_number"),rs.getString("Skill"),rs.getDate("Apply_Date"));
 
 			 showApplicants.add(applicants);

@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.JobPortal.DaoImpl.ApplyJobDaoImpl;
-import com.JobPortal.DaoImpl.PostJobDaoImpl;
+
 import com.JobPortal.Model.ApplyJob;
-import com.JobPortal.Model.PostJobModel;
+
 
 
 @WebServlet("/ApplyJobController")

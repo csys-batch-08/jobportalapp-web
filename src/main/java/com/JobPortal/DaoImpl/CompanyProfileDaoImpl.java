@@ -3,8 +3,6 @@ package com.JobPortal.DaoImpl;
 import com.JobPortal.Connection.ConnectionUtil;
 import com.JobPortal.Dao.CompanyProfileInterface;
 import com.JobPortal.Model.CompanyModel;
-import com.JobPortal.Model.PostJobModel;
-import com.JobPortal.Model.User_Info;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -62,7 +60,6 @@ if(i>0)
 {
 				return true;
 
-				//System.out.println("welcome "+rs.getString("first_name") );
 				}else {
 						return false;
 				}
@@ -91,22 +88,7 @@ if(i>0)
 		 
 	}
 	
-//	public void viewCompanyProfile (CompanyModel st) throws ClassNotFoundException, SQLException {
-//		
-//		 Connection con=ConnectionUtil.getDBconnection();
-//		
-//		String update = "select * from Company_login where email=? ";
-//		 PreparedStatement stmt = con.prepareStatement(update);
-//		 
-//		 
-//			stmt.setString(1, st.getEmail());
-//			
-//					 
-//		 int res = stmt.executeUpdate();
-//
-//			System.out.println(res + " is updated !!");
-//		 
-//	}
+
 	 public int getEmployee(String email) throws ClassNotFoundException, SQLException {
 		 
 		 

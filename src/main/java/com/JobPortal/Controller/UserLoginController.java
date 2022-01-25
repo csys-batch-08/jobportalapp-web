@@ -1,7 +1,7 @@
 package com.JobPortal.Controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.JobPortal.DaoImpl.User_InfoDAOImpl;
-import com.JobPortal.Model.User_Info;
+
 
 /**
  * Servlet implementation class UserLoginController

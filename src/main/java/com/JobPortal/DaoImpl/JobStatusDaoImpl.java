@@ -10,7 +10,7 @@ import java.util.List;
 import com.JobPortal.Connection.ConnectionUtil;
 import com.JobPortal.Dao.JobStatusInterface;
 import com.JobPortal.Model.JobStatusModel;
-import com.JobPortal.Model.PostJobModel;
+
 
 
 

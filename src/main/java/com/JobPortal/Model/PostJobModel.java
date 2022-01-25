@@ -2,7 +2,7 @@ package com.JobPortal.Model;
 
 import java.util.Date;
 
-import javax.xml.crypto.Data;
+
 
 public class PostJobModel {
 	

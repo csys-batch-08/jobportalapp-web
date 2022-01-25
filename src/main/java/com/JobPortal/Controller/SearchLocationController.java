@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.JobPortal.DaoImpl.PostJobDaoImpl;
-import com.JobPortal.DaoImpl.User_InfoDAOImpl;
+
 import com.JobPortal.Model.PostJobModel;
-import com.JobPortal.Model.User_Info;
+
 
 /**
  * Servlet implementation class SearchLocationController
