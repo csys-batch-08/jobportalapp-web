@@ -1,7 +1,7 @@
 package com.JobPortal.DaoImpl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ import com.JobPortal.Connection.ConnectionUtil;
 import com.JobPortal.Dao.UserInfoInterface;
 import com.JobPortal.Model.User_Info;
 
-import oracle.jdbc.internal.OracleResultSet;
+
 
 
 public class User_InfoDAOImpl implements UserInfoInterface {
