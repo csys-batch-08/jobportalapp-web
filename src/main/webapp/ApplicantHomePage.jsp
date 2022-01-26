@@ -55,11 +55,10 @@ hr.new2 {
 <div class="topnav" id="myTopnav" >
    <a style="color: white;font-size: 20px;" href="index.jsp">Home</a>
   <a style="color: white;font-size: 20px;"  href="ApplyJob.jsp">ApplyJob</a>
-  <a style="color: white;font-size: 20px;" href="ViewJobs.jsp">ViewJobs</a>
-  <a style="color: white;font-size: 20px;" href="ViewAppliedStatus.jsp">View Applied Status</a>
+  <a style="color: white;font-size: 20px;" href="ViewJobsControl">ViewJobs</a>
+  <a style="color: white;font-size: 20px;" href="ViewAppliedStatusControl">View Applied Status</a>
  
- 
-  </a>
+   </a>
 </div>
 <br>
 

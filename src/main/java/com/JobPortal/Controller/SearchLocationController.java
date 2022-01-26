@@ -56,12 +56,15 @@ public class SearchLocationController extends HttpServlet {
             
             
            HttpSession session = request.getSession();
-            session.setAttribute("Location",searchlist );
+            session.setAttribute("Locations",searchlist );
             
             response.sendRedirect("searchLocation.jsp");
 			
        
 			   response.getWriter().print("Search Suceessfully");
+			   
+			   
+			   
 
 							
 		} catch (Exception e) {

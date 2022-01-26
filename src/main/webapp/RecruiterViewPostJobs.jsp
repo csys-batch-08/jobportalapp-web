@@ -7,6 +7,7 @@
     
     <%@page import="com.JobPortal.DaoImpl.CompanyProfileDaoImpl"%>
         <%@page import="com.JobPortal.DaoImpl.PostJobDaoImpl"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
@@ -56,26 +57,12 @@ table.center {
 </style>
 
 <body>
-<%
 
-
-String email  =  (String)session.getAttribute("Email");
-System.out.println(email);
-CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
-int companyId=comDao.getEmployee(email);
-
-System.out.println(companyId);
-%>
 
 <div class="back">
 	
 
- 	<%
-	 	PostJobDaoImpl showJob = new   PostJobDaoImpl();
-	 			List<PostJobModel> jobList = new ArrayList<PostJobModel>();
-	 			jobList=showJob.showJobs();
-	 	%> 
-			<%-- <% CompanyModel user=(CompanyModel)session.getAttribute("PostJobModel"); %> --%>
+ 	
 		<table border="2" id="alljobs" style="margin-right: 70px;"  class="table">
 			<h1 align="center"><b>Job List</b></h1>
 			<thead>
@@ -94,42 +81,34 @@ System.out.println(companyId);
 			<br>
 			<br>
 			     <tbody>
-				<%
-					int i = 0;
-					for (PostJobModel list : jobList) {
-						i++;						
-				%>
+				 <c:forEach items="${jobList}" var="current">
+				 <c:set var="i" value="${i+1 }"/>
 				<tr>
-					<td><%=i%></td>
-					<td class ="table-danger"><%=list.getCompanyId()%></td>
-					<td class="table-primary"><%=list.getPostId()%></td>
-					<td class="table-info"> <%=list.getJobTitle()%></td>	
-					<td class="table-primary"><%=list.getIncome() %></td>	
-					<td class="table-warning"><%=list.getService()%></td>	
-					<td class ="table-danger"><%=list.getCategories() %></td>			
-					<td class="table-primary"> <%=list.getPostDate()%></td>
-			
-			<% 
-		int comid=	list.getCompanyId(); 
-			if(comid==companyId ){ %>
-					
-					
-									<td class="table-warning"><a href="RecruiterViewPostJobs.jsp?postId=<%=list.getPostId()%>">Delete</a></td>
-						<%} 
-			else{ %>
-						<td><b>Can't Delete</b></td>
-						<%} %>
-						</tr>
-						
-<%} %>				
+					<td class="warning">${i}</td>
+					<td class ="table-danger"><c:out value="${current.getCompanyId()}" /></td>
+					<td class="table-primary"><c:out value="${current.getPostId()}" /></td>
+					<td class="table-info"><c:out value="${current.getJobTitle()}" /></td>
+					<td class="table-primary"><c:out value="${current.getIncome()}" /></td>
+					<td class="table-warning"><c:out value="${current.getService()}" /></td>
+					<td class ="table-danger"><c:out value="${current.getCategories()}" /></td>		
+					<td class="table-primary"><c:out value="${current.getPostDate()}" /></td>
+		
+		<c:choose>  
+    <c:when test="${companyId==current.getCompanyId()}">  
+       <td class="table-warning"><a href="RecruiterViewPostJobs.jsp?postId=<c:out value="${current.getPostId()}" />">Delete</a></td>
+    </c:when> 
+    <c:otherwise>  
+      <td><b>Can't Delete</b></td> 
+    </c:otherwise>  
+</c:choose>
+</c:forEach>
+</tr>
 					</tbody>
 					
 		           </table>
 		          <a href="Recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
 		          
-		           <% int postId=Integer.parseInt(request.getParameter("postId"));
-		           showJob.deletePostJob(postId);
-		           %> 
+		          
 		           
 		            </div>
 

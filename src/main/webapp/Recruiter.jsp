@@ -50,10 +50,10 @@ hr.new2 {
 <div class="topnav" id="myTopnav">
   <a style="color: White;font-size: 20px;" href="index.jsp" >Home</a>
   <a style="color: White;font-size: 20px;" href="PostJob.jsp">Post Job</a>
-  <a style="color: White;font-size: 20px;" href="ViewApplicant.jsp">View Applicant</a>
+  <a style="color: White;font-size: 20px;" href="ViewApplicantControl">View Applicant</a>
   <a style="color: White;font-size: 20px;" href="UpdateApplicantStatus.jsp">Add Applicant Status</a>
   <a style="color: White;font-size: 20px;" href="AppliedJobStatus.jsp">View Status</a>
-  <a style="color: White;font-size: 20px;" href="RecruiterViewPostJobs.jsp?postId=0">View Post Jobs</a>
+  <a style="color: White;font-size: 20px;" href="RecruiterViewJobsControl">View Post Jobs</a>
   
  
 </div>

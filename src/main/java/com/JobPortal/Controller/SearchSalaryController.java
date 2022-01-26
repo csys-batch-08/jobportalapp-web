@@ -55,8 +55,6 @@ public class SearchSalaryController extends HttpServlet {
 		
    
 		   response.getWriter().print("Search Suceessfully");
-
-			
 		
 	} catch (Exception e) {
 		System.out.println(e);

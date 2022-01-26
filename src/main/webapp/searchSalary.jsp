@@ -3,7 +3,7 @@
   <%@page import="com.JobPortal.Model.*"%>
     <%@page import="java.util.*"%>
     <%@page import="com.JobPortal.DaoImpl.*"%>
-   
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,18 +31,7 @@ table.center {
 .button1 {background-color: lightblue;}
 </style>
 <body>
-<%
 
-		PostJobDaoImpl search = new   PostJobDaoImpl();
-		List<PostJobModel> searchList =(List<PostJobModel>) session.getAttribute("salary");
-		
-		for(int i=0; i<searchList.size();i++){
-	System.out.println(searchList.get(i));
-	PostJobModel searchs = searchList.get(i);
-	
-		     searchList=search.SearchSal(searchs.getIncome());
-		     System.out.println("salary : "+searchs.getIncome());
-%>
 		
 			<table border="2" id="alljobs" class="table">
 			<h1 align="center" ><b>Search By Salary List:</b></h1>
@@ -62,30 +51,22 @@ table.center {
 			<br>
 			<br>
 									<tbody>
-				<%
-					
-					for (PostJobModel list : searchList) {
-						i++;
-						
-						System.out.println(list);
-										%>
+				 <c:forEach items="${salary}" var="current">
+				 <c:set var="i" value="${i+1 }"/>
 				<tr>
-					<td class="warning"><%=i%></td>
-					<td class ="table-danger"><%=list.getCompanyId()%></td>
-					<td class="table-primary"><%=list.getCompanyName()%></td>
-					<td class="table-info"> <%=list.getPostId()%></td>	
-					<td class="table-warning"> <%=list.getIncome()%></td>	
-					<td class="table-active"> <%=list.getJobTitle()%></td>										
-					<td class="table-secondary"> <%=list.getLocation()%></td>
-					<td> <%=list.getService()%></td>
-					<td  class="table-light"><a href="ApplyJob.jsp">Apply</a></td>
+					<td class="warning">${i}</td>
+					<td class ="table-danger"><c:out value="${current.getCompanyId()}" /></td>
+					<td class="table-primary"><c:out value="${current.getCompanyName()}" /></td>
+					<td class="table-info"><c:out value="${current.getPostId()}" /></td>
+					<td class="table-warning"><c:out value="${current.getIncome()}" /></td>
+					<td class="table-active"><c:out value="${current.getJobTitle()}" /></td>										
+					<td class="table-secondary"><c:out value="${current.getLocation()}" /></td>
+					<td class="table-warning"><c:out value="${current.getService()}" /></td>
+					<td class="table-light"><a href="ApplyJob.jsp?postid=<c:out value="${current.getPostId()}" />">Apply</a></td>
 					
-												
+													
 			</tr>
-					
-					<%
-				}}
-				%>
+					</c:forEach>
 					</tbody>
 		           </table>
 		           		           <a href="ApplicantHomePage.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
