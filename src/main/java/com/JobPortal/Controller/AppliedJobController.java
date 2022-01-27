@@ -12,22 +12,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.JobPortal.DaoImpl.ApplyJobDaoImpl;
 import com.JobPortal.DaoImpl.CompanyProfileDaoImpl;
-import com.JobPortal.Model.ApplyJob;
+import com.JobPortal.DaoImpl.JobStatusDaoImpl;
+import com.JobPortal.Model.JobStatusModel;
 
-@WebServlet("/ViewApplicantControl")
-public class ViewApplicantController extends HttpServlet {
+@WebServlet("/AppliedJobControl")
+public class AppliedJobController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
-    public ViewApplicantController() {
+    public AppliedJobController() {
         super();
-       
     }
 
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		HttpSession session=request.getSession();
 		String email  =  (String)session.getAttribute("Email");
 		System.out.println(email);
@@ -42,21 +42,21 @@ try {
 			e.printStackTrace();
 		}
 
-		ApplyJobDaoImpl showJob = new   ApplyJobDaoImpl();
-		List<ApplyJob> appliedList = new ArrayList<ApplyJob>();
+		JobStatusDaoImpl status = new   JobStatusDaoImpl();
+		List<JobStatusModel> update = new ArrayList<JobStatusModel>();
 		try {
-			appliedList=showJob.showApplicant();
+			update=status.updateStatus();
 			
-			session.setAttribute("appliedList",appliedList );
-			response.sendRedirect("ViewApplicant.jsp");
-
+			 session.setAttribute("updates",update );
+			 response.sendRedirect("AppliedJobStatus.jsp");
 		} catch (ClassNotFoundException | SQLException e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+			}
+
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		doGet(request, response);
 	}
 

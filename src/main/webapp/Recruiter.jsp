@@ -20,7 +20,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  width: 16%;
+  width: 20%;
   
 }
 
@@ -50,9 +50,8 @@ hr.new2 {
 <div class="topnav" id="myTopnav">
   <a style="color: White;font-size: 20px;" href="index.jsp" >Home</a>
   <a style="color: White;font-size: 20px;" href="PostJob.jsp">Post Job</a>
-  <a style="color: White;font-size: 20px;" href="ViewApplicantControl">View Applicant</a>
-  <a style="color: White;font-size: 20px;" href="UpdateApplicantStatus.jsp">Add Applicant Status</a>
-  <a style="color: White;font-size: 20px;" href="AppliedJobStatus.jsp">View Status</a>
+  <a style="color: White;font-size: 20px;" href="ViewApplicantControl">View Applicant</a>  
+  <a style="color: White;font-size: 20px;" href="AppliedJobControl">View Status</a>
   <a style="color: White;font-size: 20px;" href="RecruiterViewJobsControl">View Post Jobs</a>
   
  

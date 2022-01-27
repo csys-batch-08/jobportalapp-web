@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0032)file:///E:/job_portal/index.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Applicant Home</title>
@@ -110,9 +109,6 @@ hr.new2 {
  <b>Email: info@JobPortal.com</b>  <br>
   <b> Phone_No: +91-40-66116611</b></p>
    </footer>
-
- 
-
 
 </script>
 </body></html>

@@ -29,6 +29,13 @@
 		<servlet-name>RecruiterViewJobsController</servlet-name>
 		<servlet-class>com.JobPortal.Controller.RecruiterViewJobsController</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AppliedJobController</display-name>
+		<servlet-name>AppliedJobController</servlet-name>
+		<servlet-class>com.JobPortal.Controller.AppliedJobController</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ViewApplicantController</servlet-name>
 		<url-pattern>/ViewApplicantController</url-pattern>
@@ -44,6 +51,10 @@
 	<servlet-mapping>
 		<servlet-name>RecruiterViewJobsController</servlet-name>
 		<url-pattern>/RecruiterViewJobsController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AppliedJobController</servlet-name>
+		<url-pattern>/AppliedJobController</url-pattern>
 	</servlet-mapping>
 	
 	

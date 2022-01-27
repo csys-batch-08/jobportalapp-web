@@ -113,5 +113,28 @@ if(i>0)
 		 return companyId;
 	 }
 	
+ public int getEmploye(String email) throws ClassNotFoundException, SQLException {
+		 
+		 
+		 String query ="select c.company_id,c.email,p.post_id from Company_login c,posting_job p where c.company_id=p.company_id and c.email=?";
+		 CompanyModel showJob;
+		 List<CompanyModel> viewJob= new ArrayList<CompanyModel>();
+		 Connection con=ConnectionUtil.getDBconnection();
+		 PreparedStatement ps =con.prepareStatement(query);
+		 ps.setString(1, email);
+		 ResultSet rs=ps.executeQuery();
+		 int postId=0;
+		
+		 if(rs.next())
+		 {
+			 showJob= new CompanyModel(rs.getInt(1),rs.getString(2),rs.getInt(3));
+		
+			 postId=	 rs.getInt(3);
+			 return rs.getInt(3);
+		
+		  }
+	 
+		 return postId;
+	 }
 	}
 

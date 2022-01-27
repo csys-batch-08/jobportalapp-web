@@ -30,33 +30,24 @@ public class UpdateApplicantStatus extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-       
-
 	try {
 		String PostId = request.getParameter("postId");
 		String ApplicantId = request.getParameter("applicantId");
 		String Status = request.getParameter("status");
 		
-
 		int postId = Integer.parseInt(PostId);
 		int applicantId = Integer.parseInt(ApplicantId);
-		
-    
 		
       JobStatusModel objStatus = new JobStatusModel(postId,applicantId,Status);
 		JobStatusDaoImpl statusDao = new JobStatusDaoImpl();
 		statusDao.jobStatus(objStatus);
 		
-		   response.getWriter().print("Update Suceessfully");
-
-			
 		   response.sendRedirect("Recruiter.jsp");
 		
 	} catch (Exception e) {
 		System.out.println(e);
 	}
 
-		
 		}
 }
 

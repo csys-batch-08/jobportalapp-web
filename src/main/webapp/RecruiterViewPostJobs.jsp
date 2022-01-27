@@ -101,8 +101,9 @@ table.center {
       <td><b>Can't Delete</b></td> 
     </c:otherwise>  
 </c:choose>
-</c:forEach>
+
 </tr>
+</c:forEach>
 					</tbody>
 					
 		           </table>

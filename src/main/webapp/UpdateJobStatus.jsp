@@ -26,8 +26,8 @@
 <form action="UpdateJobStatus" method="post" >
 <div class="form-box">
 <h1>Applicant Status</h1>
-<input type ="number" name = "postId" placeholder = "Enter Post Id" pattern = "[0-9]{4}" autofocus required ><br><br>
-<input type ="number" name = "applicantId" placeholder ="Enter Applicant Id" pattern = "[0-9]{3}" required><br><br>
+<input type ="number" name = "postId" value="<%=request.getParameter("postId")%>" placeholder = "Enter Post Id" required ><br><br>
+<input type ="number" name = "applicantId"  placeholder ="Enter Applicant Id" pattern = "[0-9]{3}" required><br><br>
 <input type ="text" name = "status" placeholder="Enter Status" pattern = "[a-zA-Z]{5,9}" required><br><br>
 
  

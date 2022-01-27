@@ -27,8 +27,6 @@ public class JobStatusDaoImpl implements JobStatusInterface {
 		stmt.setString(3, pc.getStatus());
 		
 		stmt.executeUpdate();
-		System.out.println("Update Applicant Status Successfully");
-	
 		
 	}
 	public List<JobStatusModel> updateStatus() throws ClassNotFoundException, SQLException {

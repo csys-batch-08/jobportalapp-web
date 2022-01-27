@@ -19,15 +19,11 @@ import com.JobPortal.Model.PostJobModel;
 @WebServlet("/RecruiterViewJobsControl")
 public class RecruiterViewJobsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
+          
     public RecruiterViewJobsController() {
-        super();
-        
+        super();        
     }
-
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session=request.getSession();
 		String email  =  (String)session.getAttribute("Email");
@@ -40,7 +36,6 @@ public class RecruiterViewJobsController extends HttpServlet {
 			companyId = comDao.getEmployee(email);
 			session.setAttribute("companyId",companyId );
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -52,13 +47,9 @@ public class RecruiterViewJobsController extends HttpServlet {
 				response.sendRedirect("RecruiterViewPostJobs.jsp");
 
 			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-		
-	}
-
-	
+			}		
+	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);

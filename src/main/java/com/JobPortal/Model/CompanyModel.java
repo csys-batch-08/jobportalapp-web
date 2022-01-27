@@ -11,6 +11,16 @@ public class CompanyModel {
 	private String email;
 	private String password;
 	
+	private int postId;
+	
+	
+	
+	public int getPostId() {
+		return postId;
+	}
+	public void setPostId(int postId) {
+		this.postId = postId;
+	}
 	public int getCompanyId() {
 		return companyId;
 	}
@@ -80,6 +90,12 @@ public class CompanyModel {
 		return "CompanyModel [companyId=" + companyId + ", companyName=" + companyName + ", userName=" + userName
 				+ ", userRole=" + userRole + ", phoneNumber=" + phoneNumber + ", location=" + location + ", email="
 				+ email + ", password=" + password + "]";
+	}
+	public CompanyModel(int companyId, String email, int postId) {
+		super();
+		this.companyId = companyId;
+		this.email = email;
+		this.postId = postId;
 	}
 	
 	

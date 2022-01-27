@@ -38,8 +38,8 @@
 			<thead>
 				<tr>
 				<th>S.No</th>
-				   <th >Post Id</th>
-					<th>Applicant Id</th>
+				<th>Applicant Id</th>
+				   <th >Post Id</th>					
 					<th>Applicant Name</th>
 					<th>Qualification</th>
 					<th>Age</th>
@@ -47,7 +47,8 @@
 					<th>Address</th>
 					<th>Phone Number</th>
 					<th>Skill</th>
-					<th>Applied Date</th>					
+					<th>Applied Date</th>	
+					<th>Add Status</th>				
 						</tr>
 			</thead>
 			<br>
@@ -57,8 +58,8 @@
 				 <c:set var="i" value="${i+1 }"/>
 				<tr>
 					<td class="warning">${i}</td>
-					<td class ="table-danger"><c:out value="${current.getPostId()}" /></td>
-					<td class="table-primary"><c:out value="${current.getApplicantId()}" /></td>
+					<td class ="table-danger"><c:out value="${current.getPostId()}" /></td>	
+					<td class="table-primary"><c:out value="${current.getApplicantId()}" /></td>									
 					<td class="table-info"> <c:out value="${current.getApplicantName()}" /></td>	
 					<td class="table-primary"><c:out value="${current.getQualification()}" /></td>	
 					<td class="table-warning"><c:out value="${current.getAge()}" /></td>
@@ -66,7 +67,18 @@
 					<td class="table-primary"><c:out value="${current.getAddress()}" /></td> 
 					<td class="table-secondary"><c:out value="${current.getPhoneNumber()}" /></td>
 					<td class="table-danger"><c:out value="${current.getSkill()}" /></td>
-					<td class="table-light"><c:out value="${current.getDate()}" /></td>							
+					<td class="table-light"><c:out value="${current.getDate()}" /></td>			
+					
+					<c:choose>  
+    <c:when test="${postId==current.getApplicantId()}">  
+       <td class="table-warning"><a href="UpdateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}" />">Add</a></td>
+    </c:when> 
+    <c:otherwise>  
+      <td><b>Can't Add</b></td> 
+    </c:otherwise>  
+</c:choose>
+
+				
 			</tr>					
 					</c:forEach>
 					</tbody>

@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import com.JobPortal.Connection.ConnectionUtil;
 import com.JobPortal.Dao.PostJobInterface;
-
+import com.JobPortal.Model.CompanyModel;
 import com.JobPortal.Model.PostJobModel;
 
 
@@ -204,7 +204,6 @@ public List<PostJobModel> SearchCom(String company) throws ClassNotFoundExceptio
 
 	 return viewJobs;
 }
- 
 
 
 @Override

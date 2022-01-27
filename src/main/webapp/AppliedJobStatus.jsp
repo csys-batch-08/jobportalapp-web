@@ -3,6 +3,7 @@
      <%@page import="com.JobPortal.Model.*"%>
     <%@page import="java.util.*"%>
     <%@page import="com.JobPortal.DaoImpl.*"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,12 +32,7 @@
 .button1 {background-color: lightblue;}
 </style>
 <body>
-<%
 
-		JobStatusDaoImpl status = new   JobStatusDaoImpl();
-		List<JobStatusModel> update = new ArrayList<JobStatusModel>();
-		update=status.updateStatus();
-%>
 		
 			<table border="2" id="alljobs" class="table">
 			<h1><b>Applicant Status</b></h1>
@@ -54,24 +50,26 @@
 			<br>
 			
 						<tbody>
-				<%
-					int i = 0;
-					for (JobStatusModel list : update) {
-						i++;
-										%>
+				 <c:forEach items="${updates}" var="current">
+				 <c:set var="i" value="${i+1 }"/>
 				<tr>
-					<td class="warning"><%=i%></td>
-					<td class ="table-danger"><%=list.getPostID()%></td>
-					<td class="table-primary"><%=list.getApplicantID()%></td>
-					<td class="table-active"> <%=list.getStatus()%></td>	
+					<td class="warning">${i}</td>
+					<td class ="table-danger"><c:out value="${current.getPostID()}" /></td>
+					<td class="table-primary"><c:out value="${current.getApplicantID()}" /></td>
+					<td class="table-active"><c:out value="${current.getStatus()}" /></td> 									
+					<c:choose>  
+    <c:when test="${postId==current.getPostID()}">  
+       <td class="table-warning"><a href="UpdateJobStatus.jsp?postId=<c:out value="${current.getPostID()}" />">Update</a></td>
+    </c:when> 
+    <c:otherwise>  
+      <td><b>Can't Update</b></td> 
+    </c:otherwise>  
+</c:choose>
 					
-					<td class="table-light"><a href="UpdateJobStatus.jsp">Update</a></td>
 									
 			</tr>
 					
-					<%
-				}
-				%>
+					</c:forEach>
 					</tbody>
 		           </table>
 		           <a href="Recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
