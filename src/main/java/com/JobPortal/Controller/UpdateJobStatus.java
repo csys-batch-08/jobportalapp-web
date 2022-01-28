@@ -44,7 +44,7 @@ public class UpdateJobStatus extends HttpServlet {
 			   response.getWriter().print("Update Suceessfully");
 
 				
-			   response.sendRedirect("ApplicantHomePage.jsp");
+			   response.sendRedirect("Recruiter.jsp");
 			
 		} catch (Exception e) {
 			System.out.println(e);

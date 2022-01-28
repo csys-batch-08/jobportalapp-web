@@ -62,14 +62,13 @@ table.center {
 					<td class="table-active"><c:out value="${current.getJobTitle()}" /></td>										
 					<td class="table-secondary"><c:out value="${current.getLocation()}" /></td>
 					<td class="table-warning"><c:out value="${current.getService()}" /></td>
-					<td class="table-light"><a href="ApplyJob.jsp?postid=<c:out value="${current.getPostId()}" />">Apply</a></td>
-					
-													
+					<td class="table-light"><a href="ApplyJob.jsp?postid=<c:out value="${current.getPostId()}&postId=${current.getPostId()}" />">Apply</a></td>
+																	
 			</tr>
 					</c:forEach>
 					</tbody>
 		           </table>
-		           		           <a href="ApplicantHomePage.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
+		    <a href="ApplicantHomePage.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
 		           
 </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +27,8 @@
 <form action="UpdateApplicantStatus" method="post" >
 <div class="form-box">
 <h1>Applicant Status</h1>
-<input type ="number" name = "postId" value="<%=request.getParameter("postId")%>" placeholder = "Enter Post Id"   ><br><br>
-<input type ="number" name = "applicantId"  placeholder ="Enter Applicant Id" pattern = "[0-9]{3}" required ><br><br>
+<input type ="number" name = "postId" value="${param.postId}"  placeholder = "Enter Post Id"   ><br><br>
+<input type ="number" name = "applicantId" value="${param.applicantId}" placeholder ="Enter Applicant Id"  required ><br><br>
 <input type ="text" name = "status" placeholder="Enter Status" pattern = "[a-zA-Z]+{5,9}" required><br><br>
 
  

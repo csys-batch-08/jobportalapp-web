@@ -14,11 +14,8 @@
         <input placeholder="Your MailId" type="email" name="email"  required ">
         <input placeholder="Your Password" type="password" name="password"   required >
              
-       <input type ="submit" style="background-color: red" value ="Login"  >
-       
-       <%
-       String email = request.getParameter("email");
-       System.out.println("email"); %>
+       <input type ="submit" style="background-color: red" value ="Login"  >       
+     
     <p class="backlink">Don't have an account ?<a href="CompanyRegister.jsp">Register</a></p>
     
          </div>

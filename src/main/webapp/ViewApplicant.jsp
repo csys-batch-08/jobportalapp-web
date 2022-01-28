@@ -67,11 +67,11 @@
 					<td class="table-primary"><c:out value="${current.getAddress()}" /></td> 
 					<td class="table-secondary"><c:out value="${current.getPhoneNumber()}" /></td>
 					<td class="table-danger"><c:out value="${current.getSkill()}" /></td>
-					<td class="table-light"><c:out value="${current.getDate()}" /></td>			
+					<td class="table-light"> ${current.getDate()} </td>			
 					
 					<c:choose>  
     <c:when test="${postId==current.getApplicantId()}">  
-       <td class="table-warning"><a href="UpdateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}" />">Add</a></td>
+       <td class="table-warning"><a href="UpdateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}&postId=${current.getApplicantId()}&applicantId=${current.getPostId()}" />">Add</a></td>
     </c:when> 
     <c:otherwise>  
       <td><b>Can't Add</b></td> 

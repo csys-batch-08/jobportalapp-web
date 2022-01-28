@@ -58,11 +58,6 @@ table.center {
 
 <body>
 
-
-<div class="back">
-	
-
- 	
 		<table border="2" id="alljobs" style="margin-right: 70px;"  class="table">
 			<h1 align="center"><b>Job List</b></h1>
 			<thead>
@@ -95,7 +90,7 @@ table.center {
 		
 		<c:choose>  
     <c:when test="${companyId==current.getCompanyId()}">  
-       <td class="table-warning"><a href="RecruiterViewPostJobs.jsp?postId=<c:out value="${current.getPostId()}" />">Delete</a></td>
+       <td class="table-warning"><a href="RecruiterViewPostJobs.jsp?postId=<c:out value="${current.getPostId()}"/>">Delete</a></td>
     </c:when> 
     <c:otherwise>  
       <td><b>Can't Delete</b></td> 
@@ -107,12 +102,10 @@ table.center {
 					</tbody>
 					
 		           </table>
+		     
 		          <a href="Recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
 		          
-		          
-		           
-		            </div>
-
-           
+		            
+      
 </body>
 </html>

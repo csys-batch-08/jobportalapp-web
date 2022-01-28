@@ -32,9 +32,9 @@ public class CompanyLoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String email = request.getParameter("email");
-		System.out.println("cnvccvc"+email);
+		
 		String Password = request.getParameter("password");
-		System.out.println("snvdfcgscdcghcdgdccd");
+		
 	
 		CompanyProfileDaoImpl cpDao = new CompanyProfileDaoImpl();
 		
