@@ -42,7 +42,7 @@ public class ApplyJobDaoImpl implements ApplyJobInterface{
 	 public List<ApplyJob> showApplicant() throws ClassNotFoundException, SQLException {
 		 
 		 
-		 String query ="select * from apply_job";
+		 String query ="select applicant_id,post_id,applicant_name,qualification,skill,age,email,password,address,phone_number,apply_date from apply_job";
 		 ApplyJob applicants;
 		 List<ApplyJob> showApplicants= new ArrayList<ApplyJob>();
 		 Connection con=ConnectionUtil.getDBconnection();
@@ -69,7 +69,7 @@ public class ApplyJobDaoImpl implements ApplyJobInterface{
  public void viewAppliedJobStatus() throws ClassNotFoundException, SQLException {
 	 
 	 
-	 String query ="select * from job_status";
+	 String query ="select post_id,applicant_id,status from job_status";
 	 
 	 Connection con=ConnectionUtil.getDBconnection();
 	 PreparedStatement ps =con.prepareStatement(query);

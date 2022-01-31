@@ -35,14 +35,13 @@ Scanner sc = new Scanner(System.in);
 		stmt.setString(5, str2.getCategories());
 					
 		stmt.executeUpdate();
-		System.out.println("Job Post Successfully");
 		
 	}
 
  public List<PostJobModel> showJobs() throws ClassNotFoundException, SQLException {
 	 
 	 
-	 String query ="select * from posting_job";
+	 String query ="select company_id,post_id,job_title,salary,experience,category,post_date from posting_job";
 	 PostJobModel showJobs;
 	 List<PostJobModel> viewJobs= new ArrayList<PostJobModel>();
 	 Connection con=ConnectionUtil.getDBconnection();

@@ -45,7 +45,7 @@ public class CompanyProfileDaoImpl implements CompanyProfileInterface {
 				
 		    Connection con = ConnectionUtil.getDBconnection();
 				
-		    String query = "select * from Company_login where email= ? and password= ? ";
+		    String query = "select company_id,company_name,user_name,user_role,phone_number,location,email,password,register_date from Company_login where email= ? and password= ? ";
 				
 		    PreparedStatement stmt = con.prepareStatement(query);
 		    
@@ -92,7 +92,7 @@ if(i>0)
 	 public int getEmployee(String email) throws ClassNotFoundException, SQLException {
 		 
 		 
-		 String query ="select * from Company_login where email=?";
+		 String query ="select company_id,company_name,user_name,user_role,phone_number,location,email,password,register_date from Company_login where email=?";
 		 CompanyModel showJobs;
 		 List<CompanyModel> viewJobs= new ArrayList<CompanyModel>();
 		 Connection con=ConnectionUtil.getDBconnection();

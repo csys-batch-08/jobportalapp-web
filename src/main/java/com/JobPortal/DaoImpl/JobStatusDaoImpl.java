@@ -33,7 +33,7 @@ public class JobStatusDaoImpl implements JobStatusInterface {
 	public List<JobStatusModel> updateStatus() throws ClassNotFoundException, SQLException {
 		 
 		 
-		 String query ="select * from job_status";
+		 String query ="select post_id,applicant_id,status from job_status";
 		 JobStatusModel statusUpdate;
 		 List<JobStatusModel> update= new ArrayList<JobStatusModel>();
 		 Connection con=ConnectionUtil.getDBconnection();

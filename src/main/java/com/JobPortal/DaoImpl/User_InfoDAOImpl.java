@@ -34,7 +34,7 @@ public class User_InfoDAOImpl implements UserInfoInterface {
 			stmt.setLong(7, str.getMobilenumber());
 			
 			stmt.executeUpdate();
-			System.out.println("Register User successfully");
+			
 		}
 
 			
@@ -43,12 +43,10 @@ public class User_InfoDAOImpl implements UserInfoInterface {
 
 		    Connection con = ConnectionUtil.getDBconnection();
 				
-		    String query = "select * from User_info where email_id= ? and password= ? ";
+		    String query = "select first_Name,last_Name,user_Name,gender,email_Id,password,mobile_Number from User_info where email_id= ? and password= ? ";
 				
 		    PreparedStatement stmt = con.prepareStatement(query);
 		    
-		    System.out.println("Registered ");
-				
 		    stmt.setString(1, emailId);
 			stmt.setString(2, Password);
 				

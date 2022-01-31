@@ -35,7 +35,7 @@
 
 		
 			<table border="2" id="alljobs" class="table">
-			<h1><b>Applicant Status</b></h1>
+			<h1><strong>Applicant Status</strong></h1>
 			<thead>
 				<tr>
 				<th>S.No</th>
@@ -46,8 +46,7 @@
 					
 					</tr>
 					</thead>
-			<br>
-			<br>
+			
 			
 						<tbody>
 				 <c:forEach items="${updates}" var="current">
@@ -62,7 +61,7 @@
        <td class="table-warning"><a href="updateJobStatus.jsp?postId=<c:out value="${current.getPostID()}" />">Update</a></td>
     </c:when> 
     <c:otherwise>  
-      <td><b>Can't Update</b></td> 
+      <td><strong>Can't Update</strong></td> 
     </c:otherwise>  
 </c:choose>
 					
