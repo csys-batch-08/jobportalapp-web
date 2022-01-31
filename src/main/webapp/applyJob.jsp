@@ -4,7 +4,7 @@
     <%@page import="com.JobPortal.DaoImpl.*"%>
     
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>PostJob</title>

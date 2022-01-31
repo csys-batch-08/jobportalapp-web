@@ -5,7 +5,7 @@
     <%@page import="com.JobPortal.DaoImpl.*"%>
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <style>
 table.center {
