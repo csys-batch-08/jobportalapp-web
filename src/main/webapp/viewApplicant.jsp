@@ -34,7 +34,7 @@
 </style>
 <body>
 		<table border="2" id="allapplicants" class="table" >
-			<h1 style="text-align: center"><b>Applicant List</b></h1>
+			<h1 style="text-align: center"><strong>Applicant List</strong></h1>
 			<thead>
 				<tr>
 				<th>S.No</th>
@@ -74,7 +74,7 @@
        <td class="table-warning"><a href="updateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}&postId=${current.getApplicantId()}&applicantId=${current.getPostId()}" />">Add</a></td>
     </c:when> 
     <c:otherwise>  
-      <td><b>Can't Add</b></td> 
+      <td><strong>Can't Add</strong></td> 
     </c:otherwise>  
 </c:choose>
 

@@ -28,7 +28,7 @@
 </style>
 <body>
 <table border="2" id="alljobs" class="table" >
-			<h1 align="center"><b>View Applicant Status</b></h1>
+			<h1 align="center"><strong>View Applicant Status</strong></h1>
 			<thead>
 			<tr>
 				<th>S.No</th>
@@ -41,9 +41,7 @@
 					<th>Status</th>					
 					</tr>
 					</thead>
-					<br>
-			<br>
-			
+							
 						<tbody>
 				 <c:forEach items="${Emails}" var="current">
 				 <c:set var="i" value="${i+1 }"/>

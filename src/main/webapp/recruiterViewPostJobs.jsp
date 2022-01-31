@@ -59,7 +59,7 @@ table.center {
 <body>
 
 		<table border="2" id="alljobs" style="margin-right: 70px;"  class="table">
-			<h1 align="center"><b>Job List</b></h1>
+			<h1 align="center"><strong>Job List</strong></h1>
 			<thead>
 				<tr>	
 				<th>S.No</th>
@@ -93,7 +93,7 @@ table.center {
        <td class="table-warning"><a href="recruiterViewPostJobs.jsp?postId=<c:out value="${current.getPostId()}"/>">Delete</a></td>
     </c:when> 
     <c:otherwise>  
-      <td><b>Can't Delete</b></td> 
+      <td><strong>Can't Delete</strong></td> 
     </c:otherwise>  
 </c:choose>
 

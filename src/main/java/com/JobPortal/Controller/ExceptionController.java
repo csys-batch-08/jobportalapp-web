@@ -13,31 +13,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ExceptionController
- */
+
 @WebServlet("/exception")
 public class ExceptionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public ExceptionController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String email = request.getParameter("email");  
 		try{  
 		Class.forName("oracle.jdbc.driver.OracleDriver");  
 		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
-		PreparedStatement ps=con.prepareStatement("select * from Company_login where EMAIL=?");  
+		PreparedStatement ps=con.prepareStatement("select company_id,company_name,user_name,user_role,phone_number,location,email,password,register_date from Company_login where EMAIL=?");  
 		ps.setString(1, email);  
 		ResultSet rs=ps.executeQuery(); 
 		System.out.println("abcd");
@@ -62,11 +55,8 @@ public class ExceptionController extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

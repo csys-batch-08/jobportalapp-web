@@ -34,7 +34,7 @@ table.center {
 
 		
 			<table border="2" id="alljobs" class="table" >
-			<h1 align="center"><b>Search By Location List:</b></h1>
+			<h1 align="center"><strong>Search By Location List</strong></h1>
 			<thead>
 				<tr>
 				<th>S.No</th>

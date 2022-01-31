@@ -29,7 +29,7 @@
 <body>
 
 		<table border="2" id="alljobs" class="table">
-			<h1 style="text-align: center"><b>Job List</b></h1>
+			<h1 style="text-align: center"><strong>Job List</strong></h1>
 			<thead>
 				<tr>
 				<th>S.No</th>
