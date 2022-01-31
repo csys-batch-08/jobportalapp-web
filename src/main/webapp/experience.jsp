@@ -7,12 +7,12 @@
 <title>Search By Experience</title>
 </head>
 <link rel="stylesheet" href="location.css">
-<body background="https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<body background=url(Assets/back.jpg)>
 
 <form action="SearchExperienceController" method="post" >
 <div class="form-box">
 <h1>Search By Experience</h1>
-<input type ="text" name = "experience" placeholder = "Enter Experience" pattern = "[0-9][A-Za-z]+{3,10}"  autofocus required ><br><br>
+<input type ="text" name = "experience" placeholder = "Enter Experience" pattern = "[0-9][A-Za-z]+{6,7}"  autofocus required ><br><br>
 
  
  <input type ="submit" style="background-color: red" value ="Search">

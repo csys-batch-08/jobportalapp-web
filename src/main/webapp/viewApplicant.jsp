@@ -71,7 +71,7 @@
 					
 					<c:choose>  
     <c:when test="${postId==current.getApplicantId()}">  
-       <td class="table-warning"><a href="UpdateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}&postId=${current.getApplicantId()}&applicantId=${current.getPostId()}" />">Add</a></td>
+       <td class="table-warning"><a href="updateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}&postId=${current.getApplicantId()}&applicantId=${current.getPostId()}" />">Add</a></td>
     </c:when> 
     <c:otherwise>  
       <td><b>Can't Add</b></td> 
@@ -83,6 +83,6 @@
 					</c:forEach>
 					</tbody>
 		           </table>
-<a href="Recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
+<a href="recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Update Status</title>
 </head>
-<link rel="stylesheet" href="UpdateApplicantStatus.css">
+<link rel="stylesheet" href="updateApplicant.css">
 <style>
 .button {
   border: none;
@@ -21,7 +21,7 @@
 }
 .button1 {background-color: lightblue;}
 </style>
-<body background="https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<body >
 
 <form action="UpdateJobStatus" method="post" >
 <div class="form-box">
@@ -35,7 +35,7 @@
     
 </div>
 </form>
-<a href="Recruiter.jsp" ><button class="button button1" style="margin-left: 30px;margin-top: 550px">Back</button></a>
+<a href="recruiter.jsp" ><button class="button button1" style="margin-left: 30px;margin-top: 550px">Back</button></a>
 
 </body>
 </html>

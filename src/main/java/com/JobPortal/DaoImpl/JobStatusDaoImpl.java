@@ -29,6 +29,7 @@ public class JobStatusDaoImpl implements JobStatusInterface {
 		stmt.executeUpdate();
 		
 	}
+	
 	public List<JobStatusModel> updateStatus() throws ClassNotFoundException, SQLException {
 		 
 		 
@@ -51,7 +52,7 @@ public class JobStatusDaoImpl implements JobStatusInterface {
 	 
 		 return update;
 	 }
-
+	
 	
 	public void updateJobStatusDao(JobStatusModel pc1)throws ClassNotFoundException, SQLException {
 		

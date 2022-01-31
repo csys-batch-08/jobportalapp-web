@@ -27,8 +27,7 @@ public class SearchCompanyController extends HttpServlet {
 
    		try {
 		String company = request.getParameter("company");
-		
-		System.out.println("kcfsbhjfvd");
+				
 	  PostJobDaoImpl search = new PostJobDaoImpl();
 	  
         List<PostJobModel> searchlist = search.SearchCom(company);

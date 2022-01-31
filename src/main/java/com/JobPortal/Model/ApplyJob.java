@@ -29,7 +29,15 @@ public class ApplyJob {
 	private long phoneNumber;
 	private int applicantId;
 	private Date date;
+	private String status;
 	
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public int getPostId() {
 		return postId;
 	}
@@ -152,9 +160,17 @@ public class ApplyJob {
 		this.skill = skill;
 		this.date = date;
 	}
+	public ApplyJob(int postId, String applicantName, String email, long phoneNumber, int applicantId, Date date,
+			String status) {
+		super();
+		this.postId = postId;
+		this.applicantName = applicantName;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.applicantId = applicantId;
+		this.date = date;
+		this.status = status;
+	}
 	
 	
-	
-	
-
 }

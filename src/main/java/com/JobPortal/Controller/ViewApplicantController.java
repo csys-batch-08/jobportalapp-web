@@ -48,7 +48,7 @@ try {
 			appliedList=showJob.showApplicant();
 			
 			session.setAttribute("appliedList",appliedList );
-			response.sendRedirect("ViewApplicant.jsp");
+			response.sendRedirect("viewApplicant.jsp");
 
 		} catch (ClassNotFoundException | SQLException e) {
 			

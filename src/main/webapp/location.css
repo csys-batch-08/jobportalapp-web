@@ -27,7 +27,7 @@ body {
 	height: 400px;
 }
 .form-box:before {
-	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSafHzR_gbgOTm7BSKDHZrUTh1OgfNLb0RaOw&usqp=CAU); 
+	background-image: url("Assets/back.jpg");
 	width: 100%;
 	height: 100%;
 	background-size: cover;

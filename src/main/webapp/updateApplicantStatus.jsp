@@ -7,7 +7,8 @@
 <meta charset="ISO-8859-1">
 <title>Update applicant</title>
 </head>
-<link rel="stylesheet" href="UpdateApplicantStatus.css">
+
+<link rel="stylesheet" href="updateApplicant.css">
 <style>
 .button {
   border: none;
@@ -38,6 +39,6 @@
 
 
 </form>
-<a href="Recruiter.jsp" ><button class="button button1" style="margin-left: 30px;margin-top: 550px">Back</button></a>
+<a href="recruiter.jsp" ><button class="button button1" style="margin-left: 30px;margin-top: 550px">Back</button></a>
 </body>
 </html>

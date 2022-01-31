@@ -6,7 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Login</title>
 </head>
-<link rel="stylesheet" href="CompanyLogin.css">
+
+<link rel="stylesheet" href="companyLogin.css">
 <body background=url(Assets/back.jpg)>
  <form action="CompanyLoginController" method="POST">
         <div class="form-box">            
@@ -16,7 +17,7 @@
              
        <input type ="submit" style="background-color: red" value ="Login"  >       
      
-    <p class="backlink">Don't have an account ?<a href="CompanyRegister.jsp">Register</a></p>
+    <p class="backlink">Don't have an account ?<a href="companyRegister.jsp">Register</a></p>
     
          </div>
         </form>

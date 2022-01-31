@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Company Register</title>
 </head>
-<link rel="stylesheet" href="CompanyRegister.css">
+<link rel="stylesheet" href="companyRegister.css">
 
 <body>
 
@@ -23,7 +23,7 @@
 <p id="emailresponse"></p>
 <input type="password" name="password" placeholder="Password" pattern = "[a-zA-Z0-9@#]{5,8})"  required  ><br><br> 
  <input type ="submit" style="background-color: red" value ="Login">
-    <p class="backlink">Already have an account ?<a href="CompanyLogin.jsp">Login</a></p>
+    <p class="backlink">Already have an account ?<a href="companyLogin.jsp">Login</a></p>
 </div>
 
 <p id="emailresponse"></p>
@@ -35,7 +35,7 @@ function emailvalid()
 var email = document.getElementById("mailid").value;  
 console.log(email);
 
-var url="Exception.jsp?email="+email;  
+var url="exception?email="+email;  
   
 if(window.XMLHttpRequest){  
 request=new XMLHttpRequest();  

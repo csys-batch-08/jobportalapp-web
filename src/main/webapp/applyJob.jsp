@@ -9,9 +9,9 @@
 <meta charset="ISO-8859-1">
 <title>PostJob</title>
 </head>
-<link rel="stylesheet" href="ApplyJob.css">
+<link rel="stylesheet" href="companyRegister.css">
 
-<body  background="Assets/back.jpg">
+<body>
 
 <form action="ApplyJobController" method="post" >
 <div class="form-box">

@@ -32,9 +32,8 @@ public class ViewJobsController extends HttpServlet {
 			jobList=showJob.showJobs();
 			HttpSession session=request.getSession();
 			session.setAttribute("jobList",jobList );
-			response.sendRedirect("ViewJobs.jsp");
+			response.sendRedirect("viewJobs.jsp");
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -7,7 +7,7 @@
 <title>Search By Company</title>
 </head>
 <link rel="stylesheet" href="location.css">
-<body background="https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<body background=url(Assets/back.jpg)>
 
 <form action="SearchCompanyController" method="post" >
 <div class="form-box">

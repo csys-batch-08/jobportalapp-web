@@ -48,7 +48,7 @@ try {
 			update=status.updateStatus();
 			
 			 session.setAttribute("updates",update );
-			 response.sendRedirect("AppliedJobStatus.jsp");
+			 response.sendRedirect("appliedJobStatus.jsp");
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

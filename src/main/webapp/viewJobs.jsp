@@ -60,13 +60,13 @@
 					<td class="table-warning"><c:out value="${current.getService()}" /></td>
 					<td class="table-danger"><c:out value="${current.getCategories()}" /></td>		
 					<td class="warning"><c:out value="${current.getPostDate()}" /></td>
-					<td><a href="ApplyJob.jsp?postid=<c:out value="${current.getPostId()}&postId=${current.getPostId()}" />"class="table-light">Apply</a></td>
+					<td><a href="applyJob.jsp?postid=<c:out value="${current.getPostId()}&postId=${current.getPostId()}" />"class="table-light">Apply</a></td>
 									
 			</tr>
 					</c:forEach>
 					</tbody>
 		           </table>
-		           		           <a href="ApplicantHomePage.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
+		           		           <a href="applicantHomePage.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
 		           
 </body>
 </html>

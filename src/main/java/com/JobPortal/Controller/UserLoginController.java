@@ -12,32 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 import com.JobPortal.DaoImpl.User_InfoDAOImpl;
 
 
-/**
- * Servlet implementation class UserLoginController
- */
 @WebServlet("/UserLoginController")
 public class UserLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public UserLoginController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 			
@@ -48,14 +37,14 @@ public class UserLoginController extends HttpServlet {
 		
 		try {
 			Boolean Str = user.login(emailId, Password);
-			System.out.println(Str);
+			
 			if(Str==true)
 			{
-			    response.sendRedirect("ApplicantHomePage.jsp");
+			    response.sendRedirect("applicantHomePage.jsp");
 			}
 			else
 			{
-				response.sendRedirect("UserLoginError.jsp");
+				response.sendRedirect("userLoginError.jsp");
 				
 			}
 		} 

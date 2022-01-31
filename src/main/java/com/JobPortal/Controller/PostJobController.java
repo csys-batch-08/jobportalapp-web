@@ -51,18 +51,14 @@ public class PostJobController extends HttpServlet {
           PostJobDaoImpl postDao = new PostJobDaoImpl();
           postDao.postJobs(objpost);
 			
-			   response.getWriter().print("Post Job Suceessfully");
 				
-				response.sendRedirect("Recruiter.jsp");
-				
-				
-			
+				response.sendRedirect("recruiter.jsp");		
+							
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
-			
-		
+	
+	
 			}
 	}
 

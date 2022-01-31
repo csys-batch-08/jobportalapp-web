@@ -6,8 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>User Register</title>
 </head>
-<link rel="stylesheet" href="UserRegister.css">
-<body background="Assets/back.jpg">
+<link rel="stylesheet" href="userRegister.css">
+<body >
 
 <form action="UserRegisterController" method="post" >
 <div class="form-box">
@@ -22,7 +22,7 @@
 <input type="number" name = "mobilenumber" placeholder="MobileNumber" pattern = "[0-9]{10}" required>
  
  <input type ="submit" style="background-color: red" value ="Login">
-    <p class="backlink">Already have an account ?<a href="UserLogin.jsp">Login</a></p>
+    <p class="backlink">Already have an account ?<a href="userLogin.jsp">Login</a></p>
 </div>
 <p id="emailresponse"></p>
 </form>
@@ -33,7 +33,7 @@ function emailvalid()
 var email = document.getElementById("mailid").value;  
 console.log(email);
 
-var url="Exception.jsp?email="+email;  
+var url="UserException?email="+email;  
   
 if(window.XMLHttpRequest){  
 request=new XMLHttpRequest();  

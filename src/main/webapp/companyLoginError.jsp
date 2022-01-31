@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Error</title>
 <style >
 .button {
   background-color: #4CAF50; /* Green */
@@ -30,7 +30,7 @@
 <body>
 <h1 style = text align = "center">Data Not Registered</h1>
 <div class="center">
-<a href="UserLogin.jsp"><button class="button button3">Back To Login</button></a>
+<a href="companyLogin.jsp"><button class="button button3">Back To Login</button></a>
 </div>
 
 </body>

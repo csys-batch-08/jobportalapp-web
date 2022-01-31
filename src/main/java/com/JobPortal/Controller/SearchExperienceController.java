@@ -45,18 +45,12 @@ public class SearchExperienceController extends HttpServlet {
             
             response.sendRedirect("searchExperience.jsp");
 			
-       
-			   response.getWriter().print("Search Suceessfully");
-
-				
-			
 		} catch (Exception e) {
 			System.out.println(e);
 			
 		}
 
-			System.out.println("welcome");
-		
+	
 			}
 }
 

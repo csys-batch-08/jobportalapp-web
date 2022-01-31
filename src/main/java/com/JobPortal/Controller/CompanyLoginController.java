@@ -47,12 +47,12 @@ public class CompanyLoginController extends HttpServlet {
 			if(Str==true)
 			{
 
-			    response.sendRedirect("Recruiter.jsp");
+			    response.sendRedirect("recruiter.jsp");
 			   			    
 			}
 			else
 			{
-				response.sendRedirect("CompanyLoginError.jsp");
+				response.sendRedirect("companyLoginError.jsp");
 				
 			}
 		} 

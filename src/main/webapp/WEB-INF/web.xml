@@ -36,6 +36,34 @@
 		<servlet-name>AppliedJobController</servlet-name>
 		<servlet-class>com.JobPortal.Controller.AppliedJobController</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ViewUserApplicantController</display-name>
+		<servlet-name>ViewUserApplicantController</servlet-name>
+		<servlet-class>com.JobPortal.Controller.ViewUserApplicantController</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ShowStatusController</display-name>
+		<servlet-name>ShowStatusController</servlet-name>
+		<servlet-class>com.JobPortal.Controller.ShowStatusController</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ExceptionController</display-name>
+		<servlet-name>ExceptionController</servlet-name>
+		<servlet-class>com.JobPortal.Controller.ExceptionController</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>UserRegisterEmailException</display-name>
+		<servlet-name>UserRegisterEmailException</servlet-name>
+		<servlet-class>com.JobPortal.Controller.UserRegisterEmailException</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ViewApplicantController</servlet-name>
 		<url-pattern>/ViewApplicantController</url-pattern>
@@ -55,6 +83,22 @@
 	<servlet-mapping>
 		<servlet-name>AppliedJobController</servlet-name>
 		<url-pattern>/AppliedJobController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewUserApplicantController</servlet-name>
+		<url-pattern>/ViewUserApplicantController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowStatusController</servlet-name>
+		<url-pattern>/ShowStatusController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ExceptionController</servlet-name>
+		<url-pattern>/ExceptionController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserRegisterEmailException</servlet-name>
+		<url-pattern>/UserRegisterEmailException</url-pattern>
 	</servlet-mapping>
 	
 	

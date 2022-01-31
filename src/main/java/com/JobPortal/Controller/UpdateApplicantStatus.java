@@ -42,7 +42,7 @@ public class UpdateApplicantStatus extends HttpServlet {
 		JobStatusDaoImpl statusDao = new JobStatusDaoImpl();
 		statusDao.jobStatus(objStatus);
 		
-		   response.sendRedirect("Recruiter.jsp");
+		   response.sendRedirect("recruiter.jsp");
 		
 	} catch (Exception e) {
 		System.out.println(e);

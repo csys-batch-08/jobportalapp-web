@@ -21,7 +21,6 @@ public class UpdateJobStatus extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -41,10 +40,7 @@ public class UpdateJobStatus extends HttpServlet {
 			JobStatusDaoImpl statusDao = new JobStatusDaoImpl();
 			statusDao.updateJobStatusDao(objStatus);
 			
-			   response.getWriter().print("Update Suceessfully");
-
-				
-			   response.sendRedirect("Recruiter.jsp");
+			   response.sendRedirect("recruiter.jsp");
 			
 		} catch (Exception e) {
 			System.out.println(e);

@@ -51,8 +51,8 @@ public class CompanyRegisterController extends HttpServlet {
           CompanyProfileDaoImpl comDao = new CompanyProfileDaoImpl();
 			comDao.insertCompanyProfile(objcompanymodel);
 			
-			   response.getWriter().print("Register Suceessfully");
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("CompanyLogin.jsp");
+			  
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("companyLogin.jsp");
 				requestDispatcher.forward(request, response);
 				
 				

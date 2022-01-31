@@ -12,6 +12,7 @@ import java.util.List;
 import com.JobPortal.Connection.ConnectionUtil;
 import com.JobPortal.Dao.ApplyJobInterface;
 import com.JobPortal.Model.ApplyJob;
+import com.JobPortal.Model.PostJobModel;
 
 
 
@@ -81,5 +82,25 @@ public class ApplyJobDaoImpl implements ApplyJobInterface{
 	 System.out.println("\n" +"PostId :   " +rs.getInt(1)+"\n" +"Applicant ID :  "+rs.getInt(2)+"\n"+"job status : "+rs.getString(3));
 	 }
 	}
-	}
+	
+public List<ApplyJob> viewStatusApplicant(String email) throws ClassNotFoundException, SQLException {
+	
+	String Query = "select a.post_id,a.applicant_name,a.email,a.phone_number,a.applicant_id,a.apply_date,j.status from apply_job a,job_status j where a.applicant_id = j.applicant_id and a.email=? ";
+	ApplyJob showStatus;
+	List<ApplyJob> viewStatus = new ArrayList<ApplyJob>();
+	Connection con=ConnectionUtil.getDBconnection();
+	 PreparedStatement ps =con.prepareStatement(Query);
+	
+	 ps.setString(1, email);
+	 ResultSet rs=ps.executeQuery();
+	 
+	 while(rs.next())
+	 {
+		 showStatus=new ApplyJob(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getLong(4),rs.getInt(5),rs.getDate(6),rs.getString(7));
+	 
+		 viewStatus.add(showStatus);
+	 }
+	return viewStatus;
 
+}
+}

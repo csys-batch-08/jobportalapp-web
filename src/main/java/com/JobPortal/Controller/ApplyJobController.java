@@ -50,9 +50,9 @@ public class ApplyJobController extends HttpServlet {
           ApplyJobDaoImpl applyDao = new ApplyJobDaoImpl();
           applyDao.applyJob(objapply);
 			
-			   response.getWriter().print("Apply Job Suceessfully");
+			   
 				
-				response.sendRedirect("ApplicantHomePage.jsp");
+				response.sendRedirect("applicantHomePage.jsp");
 				
 				
 			

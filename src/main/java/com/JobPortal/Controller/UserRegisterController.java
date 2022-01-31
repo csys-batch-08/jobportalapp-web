@@ -11,38 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 import com.JobPortal.DaoImpl.User_InfoDAOImpl;
 import com.JobPortal.Model.User_Info;
 
-/**
- * Servlet implementation class Register
- */
+
 @WebServlet("/UserRegisterController")
 public class UserRegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public UserRegisterController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	//	response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	
 		{
-//			 response.setContentType("text/html");
-//		        PrintWriter out=response.getWriter();
-		       
 
 			try {
 				String firstname = request.getParameter("firstname");
@@ -60,18 +47,14 @@ public class UserRegisterController extends HttpServlet {
 				User_InfoDAOImpl RegDao = new User_InfoDAOImpl();
 				RegDao.insert(objUserInfo);
 				
-				   response.getWriter().print("Register Suceessfully");
-
-					
-				   response.sendRedirect("UserLogin.jsp");
+				   response.sendRedirect("userLogin.jsp");
 				
 			} catch (Exception e) {
 				System.out.println(e);
 				
 			}
-
-				
-			
+		
+		
 				}
 	}
 

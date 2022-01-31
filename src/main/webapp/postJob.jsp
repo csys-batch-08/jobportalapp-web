@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>PostJob</title>
 </head>
-<link rel="stylesheet" href="PostJob.css">
+<link rel="stylesheet" href="postJob.css">
 
 <body>>
 <form action="PostJobController" method="post" >

@@ -45,14 +45,14 @@
 <h1 style="background-color: black; font-size: 31px; color: DarkOrange; back" align="left" >JOB PORTAL &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="CompanyRegister.jsp" style="color: DarkOrange">Recruiter</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="UserRegister.jsp" style="color: DarkOrange">Candidate</a></h1>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="companyRegister.jsp" style="color: DarkOrange">Recruiter</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="userRegister.jsp" style="color: DarkOrange">Candidate</a></h1>
 
 
 
 <h1 style="size: 50px;text-align: center;color:DarkOrange ;">Welcome to Profesional Community</h1>
 <p style="size: 25px;text-align: center;color:black ;font-size: 20px">This is one of the fastest growing networks. Hire skilled people or get hired by the top companies. </p>
-<div class="slideshow-container">
+
 
       <img src="Assets/3.jpg" style="width: 70%;margin-left: 200px">
    

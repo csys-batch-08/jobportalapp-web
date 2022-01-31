@@ -59,7 +59,7 @@
 					<td class="table-active"><c:out value="${current.getStatus()}" /></td> 									
 					<c:choose>  
     <c:when test="${postId==current.getPostID()}">  
-       <td class="table-warning"><a href="UpdateJobStatus.jsp?postId=<c:out value="${current.getPostID()}" />">Update</a></td>
+       <td class="table-warning"><a href="updateJobStatus.jsp?postId=<c:out value="${current.getPostID()}" />">Update</a></td>
     </c:when> 
     <c:otherwise>  
       <td><b>Can't Update</b></td> 
@@ -72,6 +72,6 @@
 					</c:forEach>
 					</tbody>
 		           </table>
-		           <a href="Recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
+		           <a href="recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
 </body>
 </html>

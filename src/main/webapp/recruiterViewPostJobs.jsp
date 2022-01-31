@@ -90,7 +90,7 @@ table.center {
 		
 		<c:choose>  
     <c:when test="${companyId==current.getCompanyId()}">  
-       <td class="table-warning"><a href="RecruiterViewPostJobs.jsp?postId=<c:out value="${current.getPostId()}"/>">Delete</a></td>
+       <td class="table-warning"><a href="recruiterViewPostJobs.jsp?postId=<c:out value="${current.getPostId()}"/>">Delete</a></td>
     </c:when> 
     <c:otherwise>  
       <td><b>Can't Delete</b></td> 
@@ -103,9 +103,7 @@ table.center {
 					
 		           </table>
 		     
-		          <a href="Recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>
-		          
-		            
-      
+		          <a href="recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>          
+	 
 </body>
 </html>
