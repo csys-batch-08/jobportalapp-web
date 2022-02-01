@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Applicant Home</title>
+
 <head>
+<title>Applicant Home</title>
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -65,7 +66,7 @@ hr.new2 {
 <p style="font-size: 20px;text-align: center;">This is one of the fastest growing networks. Hire skilled people or get hired by the top companies. </p>
 
 
-     <img src="Assets/3.jpg" style="width: 70%;margin-left: 200px">
+     <img src="Assets/3.jpg" alt=" no img " style="width: 70%;margin-left: 200px">
 <br>
 <br><br><br>
 <div style="text-align: center;">
@@ -79,10 +80,10 @@ hr.new2 {
       
     </tr>
     <tr>
-      <td><a href="location.jsp"><b>By Location</b></a></td>
-      <td><a href="company.jsp"><b>By Company</b></a></td> 
-      <td><a href="experience.jsp"><b>By Experience</b></a></td>
-      <td><a href="salary.jsp"><b>By Salary</b></a></td>
+      <td><a href="location.jsp"><strong>By Location</strong></a></td>
+      <td><a href="company.jsp"><strong>By Company</strong></a></td> 
+      <td><a href="experience.jsp"><strong>By Experience</strong></a></td>
+      <td><a href="salary.jsp"><strong>By Salary</strong></a></td>
     </tr>
     </tbody></table>
 </div><br>
@@ -105,10 +106,9 @@ hr.new2 {
 			All Jobs-Walkin Jobs | Contract Jobs | Placement Jobs | Jobs for Women | Startup Jobs | International Jobs</p>
       
    <footer><br>
-   <p style="text-align: center;background-color: #333;color: white;"><b>copyrights</b><br>
- <b>Email: info@JobPortal.com</b>  <br>
-  <b> Phone_No: +91-40-66116611</b></p>
+   <p style="text-align: center;background-color: #333;color: white;"><strong>copyrights</strong><br>
+ <strong>Email: info@JobPortal.com</strong>  <br>
+  <strong> Phone_No: +91-40-66116611</strong></p>
    </footer>
 
-</script>
 </body></html>
