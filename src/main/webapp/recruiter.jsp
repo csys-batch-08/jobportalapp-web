@@ -63,11 +63,11 @@ hr.new2 {
 <br>
 <div>
 					
-			<strong>		<p style="font-size: 25px"><span style="color: DarkOrange">Job Seeker : </span> </strong><em>Technology has changed the way job seekers search for jobs and employers find qualified employees. 
+			<strong><p style="font-size: 25px"><span style="color: DarkOrange">Job Seeker : </span> </strong>Technology has changed the way job seekers search for jobs and employers find qualified employees. 
 					While employers still advertise job openings through traditional advertising mediums, such as local newspapers and magazines,
 					 today employers and job seekers turn to online job portals to find employment matches. Job seekers can advertise their skills and search for available positions, 
 					 and employers can announce employment openings through job portals such as Monster, Career Builders and USA Jobs, for federal government positions.</p>
-				</em>
+				
 </b>
 <h2 style="text-align: center;color:black;">
     Create economic opportunity for every member of the global workforce.
