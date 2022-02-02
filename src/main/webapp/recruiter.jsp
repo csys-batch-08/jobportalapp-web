@@ -43,6 +43,7 @@ hr.new2 {
 </style>
 </head>
 <body>
+
 <div class="topnav" id="myTopnav">
   <a style="color: White;font-size: 20px;" href="index.jsp" >Home</a>
   <a style="color: White;font-size: 20px;" href="postJob.jsp">Post Job</a>
