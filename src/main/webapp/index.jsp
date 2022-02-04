@@ -42,7 +42,7 @@
    </div>
 <h1 style="size: 50px;text-align: center;color:DarkOrange ;">Welcome to Profesional Community</h1>
 <p style="size: 25px;text-align: center;color:black ;font-size: 20px">This is one of the fastest growing networks. Hire skilled people or get hired by the top companies. </p>
-      <img src="assets/image/3.jpg" alt="no img" style="width: 70%;margin-left: 200px">
+      <img src="Assets/3.jpg" alt="no img" style="width: 70%;margin-left: 200px">
       <br>
       <br>		
 <strong><p style="font-size: 25px"><span style="color: DarkOrange">Job Seeker : </span> </strong>Technology has changed the way job seekers search for jobs and employers find qualified employees. 
