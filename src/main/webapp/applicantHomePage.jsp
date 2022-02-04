@@ -56,9 +56,7 @@ hr.new2 {
    <a style="color: white;font-size: 20px;" href="index.jsp">Home</a>
   <a style="color: white;font-size: 20px;"  href="applyJob.jsp">ApplyJob</a>
   <a style="color: white;font-size: 20px;" href="ViewJobsControl">ViewJobs</a>  
-  <a style="color: white;font-size: 20px;" href="searchStatus.jsp">View Status</a>
- 
-   </a>
+  <a style="color: white;font-size: 20px;" href="searchStatus.jsp">View Status</a>   
 </div>
 <br>
 
@@ -66,16 +64,16 @@ hr.new2 {
 <p style="font-size: 20px;text-align: center;">This is one of the fastest growing networks. Hire skilled people or get hired by the top companies. </p>
 
 
-     <img src="Assets/3.jpg" alt=" no img " style="width: 70%;margin-left: 200px">
+     <img src="assets/image/3.jpg" alt=" no img " style="width: 70%;margin-left: 200px">
 <br>
 <br><br><br>
 <div style="text-align: center;">
 <table style="width: 100%;">
     <tbody><tr>
-      <th><img src="Assets/city.jpg" alt="" width="150px" height="150px"></th>
-      <th><img src="Assets/oracle.jpg" alt="" width="150px" height="150px"></th>
-      <th><img src="Assets/logo.jpg" alt="" width="150px" height="150px"></th>
-      <th><img src="Assets/11.jpg" alt="" width="150px" height="150px"></th>
+      <th><img src="assets/image/city.jpg" alt="" width="150px" height="150px"></th>
+      <th><img src="assets/image/oracle.jpg" alt="" width="150px" height="150px"></th>
+      <th><img src="assets/image/logo.jpg" alt="" width="150px" height="150px"></th>
+      <th><img src="assets/image/11.jpg" alt="" width="150px" height="150px"></th>
       
       
     </tr>

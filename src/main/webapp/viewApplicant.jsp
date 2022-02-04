@@ -74,7 +74,7 @@
        <td class="table-warning"><a href="updateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}&postId=${current.getApplicantId()}&applicantId=${current.getPostId()}" />">Add</a></td>
     </c:when> 
     <c:otherwise>  
-      <td><strong>Can't Add</strong></td> 
+      <td><strong>---</strong></td> 
     </c:otherwise>  
 </c:choose>
 

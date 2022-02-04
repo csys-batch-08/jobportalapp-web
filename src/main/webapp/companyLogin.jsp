@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="companyLogin.css">
 <body background=url(Assets/back.jpg)>
- <form action="CompanyLoginController" method="POST">
+ <form action="CompanyLoginController" method="post">
         <div class="form-box">            
         <h1>Login Form</h1>
         <input placeholder="Your MailId" type="email" name="email"  required ">

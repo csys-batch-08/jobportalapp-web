@@ -13,14 +13,15 @@
 
 /* Style the links inside the navigation bar */
 .topnav a {
+
   float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-  width: 50%;
+  font-size: 30px;
+  width: 33%;
 }
 
 
@@ -34,21 +35,16 @@
 </style>
 </head>
 <body>
-<h1 style="background-color: black; font-size: 31px; margin: 0px; color: DarkOrange; back" align="left" >JOB PORTAL &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="companyRegister.jsp" style="color: DarkOrange">Recruiter</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="userRegister.jsp" style="color: DarkOrange">Candidate</a></h1>
-
-
+<div class="topnav" id="myTopnav" >
+   <a >JOB PORTAL</a>
+  <a  href="companyRegister.jsp">Recruiter</a>  
+  <a  href="userRegister.jsp">Candidate</a> 
+   </div>
 <h1 style="size: 50px;text-align: center;color:DarkOrange ;">Welcome to Profesional Community</h1>
 <p style="size: 25px;text-align: center;color:black ;font-size: 20px">This is one of the fastest growing networks. Hire skilled people or get hired by the top companies. </p>
-
-
-      <img src="Assets/3.jpg" alt="no img" style="width: 70%;margin-left: 200px">
+      <img src="assets/image/3.jpg" alt="no img" style="width: 70%;margin-left: 200px">
       <br>
-      <br>
-		
+      <br>		
 <strong><p style="font-size: 25px"><span style="color: DarkOrange">Job Seeker : </span> </strong>Technology has changed the way job seekers search for jobs and employers find qualified employees. 
 While employers still advertise job openings through traditional advertising mediums, such as local newspapers and magazines,
 today employers and job seekers turn to online job portals to find employment matches. Job seekers can advertise their skills and search for available positions, 
