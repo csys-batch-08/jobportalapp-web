@@ -20,8 +20,16 @@
   font-size: 19px;
   margin: 4px 2px;
   cursor: pointer;
+  
+  
 }
+
 .button1 {background-color: lightblue;}
+
+.drop {
+width: 100px;
+height: 50px;
+}
 </style>
 <body >
 
@@ -30,8 +38,11 @@
 <h1>Applicant Status</h1>
 <input type ="number" name = "postId" value="${param.postId}"  placeholder = "Enter Post Id"   ><br><br>
 <input type ="number" name = "applicantId" value="${param.applicantId}" placeholder ="Enter Applicant Id"  required ><br><br>
-<input type ="text" name = "status" placeholder="Enter Status" pattern = "[a-zA-Z]+{5,9}" required><br><br>
 
+<select name="status" id="status" class="drop">
+  <option>Selected</option>
+  <option>Rejected</option>  
+  </select><br><br>
  
  <input type ="submit" style="background-color: red" value ="Add">
     

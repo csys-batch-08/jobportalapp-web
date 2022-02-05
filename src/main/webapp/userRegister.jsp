@@ -7,6 +7,11 @@
 <title>User Register</title>
 </head>
 <link rel="stylesheet" href="userRegister.css">
+<style>
+.drop {
+width: 100px;
+height: 40px;
+}</style>
 <body >
 
 <form action="UserRegisterController" method="post" >
@@ -15,8 +20,10 @@
 <input type ="text" name = "firstname" placeholder = "FirstName" pattern = "[A-Za-z ]{3,30}" title = "show" autofocus required ><br><br>
 <input type ="text" name = "lastname" placeholder ="LastName" pattern = "[A-Za-z .]{3,30}" required><br><br>
 <input type ="text" name = "username" placeholder="UserName" pattern = "[A-Za-z ]{3,30}" required><br><br>
-<input type ="text" name = "gender" placeholder="Gender" pattern = "[A-Za-z]{3,15}" required><br><br>
-<input type="email" name = "mailid" placeholder="Email Id"  id="mailid" required onkeyup ="emailvalid()"><br><br>
+<select name="gender" id="gender" class="drop">
+  <option>Male</option>
+  <option>Female</option>  
+  </select><br><br><input type="email" name = "mailid" placeholder="Email Id"  id="mailid" required onkeyup ="emailvalid()"><br><br>
 <p id="emailresponse"></p>
 <input type="password" name="password" placeholder="Password" pattern = "[a-zA-Z0-9@#]{5,8})" required><br><br>
 <input type="number" name = "mobilenumber" placeholder="MobileNumber" pattern = "[0-9]{10}" required>

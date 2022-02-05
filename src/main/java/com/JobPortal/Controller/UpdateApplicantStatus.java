@@ -50,8 +50,3 @@ public class UpdateApplicantStatus extends HttpServlet {
 
 		}
 }
-
-
-
-
-

@@ -30,7 +30,7 @@ public class ViewApplicantController extends HttpServlet {
 		
 		HttpSession session=request.getSession();
 		String email  =  (String)session.getAttribute("Email");
-		System.out.println(email);
+		
 		CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
 		int postId;
 		
