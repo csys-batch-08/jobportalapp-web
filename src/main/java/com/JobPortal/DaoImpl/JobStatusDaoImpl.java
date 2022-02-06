@@ -30,21 +30,37 @@ public class JobStatusDaoImpl implements JobStatusInterface {
 		
 	}
 	
-	public List<JobStatusModel> updateStatus() throws ClassNotFoundException, SQLException {
+	public List<JobStatusModel> updateStatus(String email) throws ClassNotFoundException, SQLException {
 		 
 		 
-		 String query ="select post_id,applicant_id,status from job_status";
-		 JobStatusModel statusUpdate;
+		 String query ="select c.company_id,c.company_name,c.email,a.applicant_id,a.applicant_name,a.address,a.skill,a.post_id,p.job_title,a.apply_date,d.status \r\n"
+		 		+ "from apply_job a join posting_job p on a.post_id=p.post_id join Company_login c on p.company_id=c.company_id join job_status d on a.post_id=d.post_id \r\n"
+		 		+ "where c.email=?\r\n"
+		 		+ "order by a.apply_date desc";
+		 JobStatusModel statusUpdate =null;
 		 List<JobStatusModel> update= new ArrayList<JobStatusModel>();
 		 Connection con=ConnectionUtil.getDBconnection();
 		 PreparedStatement ps =con.prepareStatement(query);
-		 
+		 ps.setString(1, email);
 		 ResultSet rs=ps.executeQuery();
 		 
 		
 		 while(rs.next())
 		 {
-			 statusUpdate= new JobStatusModel(rs.getInt(1),rs.getInt(2),rs.getString(3));
+			 statusUpdate = new JobStatusModel();
+			 statusUpdate.setCompanyId(rs.getInt(1));
+			 statusUpdate.setCompanyName(rs.getString(2));
+			 statusUpdate.setEmail(rs.getString(3));
+			 statusUpdate.setApplicantID(rs.getInt(4));
+			 statusUpdate.setApplicantName(rs.getString(5));
+			 statusUpdate.setAddress(rs.getString(6));
+			 statusUpdate.setSkill(rs.getString(7));
+			 statusUpdate.setPostID(rs.getInt(8));
+			 statusUpdate.setJobTitle(rs.getString(9));
+			 statusUpdate.setAppliedDate(rs.getDate(10));
+			 statusUpdate.setStatus(rs.getString(11));
+			 
+			// statusUpdate= new JobStatusModel(rs.getInt(1),rs.getInt(2),rs.getString(3));
 		
 			 update.add(statusUpdate);
 		

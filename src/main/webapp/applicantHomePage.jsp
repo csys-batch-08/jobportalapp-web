@@ -33,9 +33,6 @@ body {
   color: black;
 }
 
-
-
-
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
@@ -46,11 +43,18 @@ hr.new2 {
   border-top: 1px dashed #333;
   
 }
+.marg{
+ margin: 0;
+}
 
-
+.about{
+ font-size:5vw;
+ text-align: center;
+ color:Indigo;
+}
 </style>
 </head>
-<body>
+<body class="marg">
 
 <div class="topnav" id="myTopnav" >
    <a style="color: white;font-size: 20px;" href="index.jsp">Home</a>
@@ -92,7 +96,7 @@ hr.new2 {
 <h2 style="text-align: center;color: black;">The mission is simple connect the world's professionals to make them more productive and
      successful.</h2><br><br>
      <hr class="new2">
-     <h2 style="font-size:5vw;text-align: center;color:rgb(34, 4, 143);">About Us</h2><p></p>
+     <h2 class="about">About Us</h2><p></p>
     <p>Jobs by Skill-Call Center Jobs | Mechanical Engineering Jobs | Biotechnology Jobs | Nursing Jobs | BPO Jobs | Networking Jobs | MBA Jobs | Java Jobs | SEO Jobs | SAP Jobs<br>
 			Jobs by Location-Jobs in Delhi | Jobs in Bangalore | Jobs in Mumbai |  Jobs in Chennai | Jobs in Hyderabad | Jobs in Kolkata | Jobs in Pune | Jobs in Chandigarh | Jobs in Lucknow | Jobs in Coimbatore<br>
 			Jobs by Function-Banking Jobs | Biotech Jobs | Airlines Jobs | HR Jobs | Accounts Jobs | Supply Chain Jobs | Legal Jobs | Marketing Jobs | Telecom Jobs | Hotels Jobs<br>

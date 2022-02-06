@@ -39,32 +39,44 @@ public class ApplyJobDaoImpl implements ApplyJobInterface{
 			System.out.println("Job applied successfully");
 		}
 			
-	 public List<ApplyJob> showApplicant() throws ClassNotFoundException, SQLException {
+	 public List<ApplyJob> showApplicant(String email) throws ClassNotFoundException, SQLException {
 		 
 		 
-		 String query ="select applicant_id,post_id,applicant_name,qualification,skill,age,email,password,address,phone_number,apply_date from apply_job";
-		 ApplyJob applicants;
+		 String query ="select a.applicant_id,a.post_id,a.applicant_name,a.qualification,a.age,a.email,a.address,a.phone_number,a.skill,a.apply_date from apply_job a join posting_job p on a.post_id=p.post_id join Company_login c on p.company_id=c.company_id  where c.email=? order by a.apply_date desc";
+		 ApplyJob applicants =null;
 		 List<ApplyJob> showApplicants= new ArrayList<ApplyJob>();
 		 Connection con=ConnectionUtil.getDBconnection();
 		PreparedStatement ps =con.prepareStatement(query);
 		
+		ps.setString(1, email);
 
-		 ResultSet rs=ps.executeQuery();
-		 
-		
-		
+		 ResultSet rs=ps.executeQuery(); 
+				
 		 while(rs.next())
 		 {
-			applicants= new ApplyJob(rs.getInt("Applicant_id"),rs.getInt("Post_id"),rs.getString("Applicant_name"),rs.getString("Qualification"),rs.getInt("Age"),rs.getString("Email"),rs.getString("Address"),rs.getLong("Phone_number"),rs.getString("Skill"),rs.getDate("Apply_Date"));
+			 applicants=new ApplyJob();
+		 applicants.setApplicantId(rs.getInt(2));
+		 applicants.setPostId(rs.getInt(1));
+		 applicants.setApplicantName(rs.getString(3));
+		 applicants.setQualification(rs.getString(4));
+		 applicants.setAge(rs.getInt(5));
+		 applicants.setEmail(rs.getNString(6));
+		 applicants.setAddress(rs.getString(7));
+		 applicants.setPhoneNumber(rs.getLong(8));
+		 applicants.setSkill(rs.getString(9));
+		 applicants.setDate(rs.getDate(10));
+		
+//		ApplyJob applicants= new ApplyJob(rs.getInt("a.applicant_id"),rs.getInt("a.post_id"),rs.getString("a.applicant_name"),rs.getString("a.qualification"),rs.getInt("a.age"),rs.getString("a.email"),rs.getString("a.address"),rs.getLong("a.phone_number"),rs.getString("a.skill"),rs.getDate("a.apply_date"));
 
 			 showApplicants.add(applicants);
 			
-
 		  }
 	 
 		 return showApplicants;
 
 	 }
+	 
+	 
  
  public void viewAppliedJobStatus() throws ClassNotFoundException, SQLException {
 	 
@@ -102,5 +114,11 @@ public List<ApplyJob> viewStatusApplicant(String email) throws ClassNotFoundExce
 	 }
 	return viewStatus;
 
+}
+
+@Override
+public List<ApplyJob> showApplicant() throws ClassNotFoundException, SQLException {
+	// TODO Auto-generated method stub
+	return null;
 }
 }

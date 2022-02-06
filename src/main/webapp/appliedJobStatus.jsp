@@ -35,12 +35,20 @@
 
 		
 			<table border="2" id="alljobs" class="table">
-			<h1><strong>Applicant Status</strong></h1>
+			<h1 align="center"><strong>Applicant Status</strong></h1><br>
 			<thead>
 				<tr>
 				<th>S.No</th>
+				   <th >Company Id</th>
+				   <th >Company Name</th>
+				   <th >Recruiter Email</th>
+				   <th >Applicant Id</th>
+				   <th >Applicant Name</th>
+				   <th >Applicant Address</th>				   
+				   <th >Applicant Skill</th>
 				   <th >Post Id</th>
-					<th>Applicant Id</th>
+				   <th >Job Title</th>				   
+					<th>Applied Date</th>
 					<th>Status</th>
 					<th>Update</th>
 					
@@ -53,17 +61,21 @@
 				 <c:set var="i" value="${i+1 }"/>
 				<tr>
 					<td class="warning">${i}</td>
+					<td class ="table-danger"><c:out value="${current.getCompanyId()}" /></td>
+					<td class ="table-primary"><c:out value="${current.getCompanyName()}" /></td>
+					<td class ="table-info"><c:out value="${current.getEmail()}" /></td>
+					<td class ="table-danger"><c:out value="${current.getApplicantID()}" /></td>
+					<td class ="table-light"><c:out value="${current.getApplicantName()}" /></td>
+					<td class ="warning"><c:out value="${current.getAddress()}" /></td>
+					<td class ="table-info"><c:out value="${current.getSkill()}" /></td>
 					<td class ="table-danger"><c:out value="${current.getPostID()}" /></td>
-					<td class="table-primary"><c:out value="${current.getApplicantID()}" /></td>
-					<td class="table-active"><c:out value="${current.getStatus()}" /></td> 									
-					<c:choose>  
-    <c:when test="${postId==current.getPostID()}">  
-       <td class="table-warning"><a href="updateJobStatus.jsp?postId=<c:out value="${current.getPostID()}" />">Update</a></td>
-    </c:when> 
-    <c:otherwise>  
-      <td><strong>Can't Update</strong></td> 
-    </c:otherwise>  
-</c:choose>
+					<td class ="table-info"><c:out value="${current.getJobTitle()}" /></td>
+					<td class="table-primary"><c:out value="${current.getAppliedDate()}" /></td>
+					<td class="table-danger"><c:out value="${current.getStatus()}" /></td> 									
+					  
+    
+ <td class="table-warning"><a href="updateJobStatus.jsp?postId=<c:out value="${current.getPostID()}" />">Update</a></td>
+    
 					
 									
 			</tr>

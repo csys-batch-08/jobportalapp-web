@@ -15,8 +15,14 @@ public class PostJobModel {
 	private Date postDate;
 	private String companyName;
 	private String location;
+	private String email;
 	
-	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getCompanyName() {
 		return companyName;
 	}

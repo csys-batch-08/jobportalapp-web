@@ -45,7 +45,7 @@ try {
 		JobStatusDaoImpl status = new   JobStatusDaoImpl();
 		List<JobStatusModel> update = new ArrayList<JobStatusModel>();
 		try {
-			update=status.updateStatus();
+			update=status.updateStatus(email);
 			
 			 session.setAttribute("updates",update );
 			 response.sendRedirect("appliedJobStatus.jsp");

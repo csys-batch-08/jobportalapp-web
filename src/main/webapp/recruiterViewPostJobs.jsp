@@ -65,6 +65,7 @@ table.center {
 				<th>S.No</th>
 				   <th >Company Id</th>
 					<th>Post Id</th>
+					<th>Email</th>
 					<th>Job Title</th>
 					<th>Salary</th>
 					<th>Experience</th>
@@ -76,27 +77,21 @@ table.center {
 			<br>
 			<br>
 			     <tbody>
-				 <c:forEach items="${jobList}" var="current">
+				 <c:forEach items="${job}" var="current">
 				 <c:set var="i" value="${i+1 }"/>
 				<tr>
 					<td class="warning">${i}</td>
 					<td class ="table-danger"><c:out value="${current.getCompanyId()}" /></td>
 					<td class="table-primary"><c:out value="${current.getPostId()}" /></td>
+					<td class="table-warning"><c:out value="${current.getEmail()}" /></td>
 					<td class="table-info"><c:out value="${current.getJobTitle()}" /></td>
 					<td class="table-primary"><c:out value="${current.getIncome()}" /></td>
 					<td class="table-warning"><c:out value="${current.getService()}" /></td>
 					<td class ="table-danger"><c:out value="${current.getCategories()}" /></td>		
 					<td class="table-primary"><c:out value="${current.getPostDate()}" /></td>
 		
-		<c:choose>  
-    <c:when test="${companyId==current.getCompanyId()}">  
        <td class="table-warning"><a href="recruiterViewPostJobs.jsp?postId=<c:out value="${current.getPostId()}"/>">Delete</a></td>
-    </c:when> 
-    <c:otherwise>  
-      <td><strong>---</strong></td> 
-    </c:otherwise>  
-</c:choose>
-
+    
 </tr>
 </c:forEach>
 					</tbody>

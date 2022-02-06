@@ -7,6 +7,7 @@
 <title>Recruiter Home</title>
 <style>
 .topnav {
+  margin:0 auto; 
   background-color: #333;
   overflow: hidden;
 }
@@ -21,7 +22,7 @@
   text-decoration: none;
   font-size: 17px;
   width: 20%;
-  
+  margin:0 auto; 
 }
 
 /* Change the color of links on hover */
@@ -40,11 +41,20 @@ hr.new2 {
   border-top: 1px dashed #333;
 }
 
+.about{
+ font-size:5vw;
+ text-align: center;
+ color:Indigo;
+}
+
+.marg{
+ margin: 0;
+}
 </style>
 </head>
-<body>
+<body class="marg">
 
-<div class="topnav" id="myTopnav">
+<div class="topnav" id="myTopnav" >
   <a style="color: White;font-size: 20px;" href="index.jsp" >Home</a>
   <a style="color: White;font-size: 20px;" href="postJob.jsp">Post Job</a>
   <a style="color: White;font-size: 20px;" href="ViewApplicantControl">View Applicant</a>  
@@ -75,8 +85,8 @@ hr.new2 {
 <h2 style="text-align: center;color: black;">The mission is simple connect the world's professionals to make them more productive and
      successful.</h2><br><br>
      <hr class="new2">
-     <p></p><h2 style="font-size:5vw;text-align: center;color:Indigo;);">About Us</h2><p></p>
-  <strong>  <p style=" color:black ; font-size: 20px">Jobs by Skill-Call Center Jobs | Mechanical Engineering Jobs | Biotechnology Jobs | Nursing Jobs | BPO Jobs | Networking Jobs | MBA Jobs | Java Jobs | SEO Jobs | SAP Jobs<br>
+     <h2 class="about" >About Us</h2><p></p>
+  <p>Jobs by Skill-Call Center Jobs | Mechanical Engineering Jobs | Biotechnology Jobs | Nursing Jobs | BPO Jobs | Networking Jobs | MBA Jobs | Java Jobs | SEO Jobs | SAP Jobs<br>
 			Jobs by Location-Jobs in Delhi | Jobs in Bangalore | Jobs in Mumbai |  Jobs in Chennai | Jobs in Hyderabad | Jobs in Kolkata | Jobs in Pune | Jobs in Chandigarh | Jobs in Lucknow | Jobs in Coimbatore<br>
 			Jobs by Function-Banking Jobs | Biotech Jobs | Airlines Jobs | HR Jobs | Accounts Jobs | Supply Chain Jobs | Legal Jobs | Marketing Jobs | Telecom Jobs | Hotels Jobs<br>
 			Jobs by Industry-IT Jobs | Pharmaceuticals Jobs | Travel Jobs | Oil and Gas Jobs | FMCG Jobs | Construction Jobs | Chemicals Jobs | Media Jobs | Retailing Jobs | PR Jobs<br>
@@ -85,8 +95,7 @@ hr.new2 {
 			Govt. Jobs-Teaching Jobs | Defence Jobs | Bank Jobs | Railway Jobs | UPSC Jobs | SSC Jobs | Law Jobs | Engineering Jobs | Post Graduate Jobs | Ph.D Jobs<br>
 			Career Services-Xpress Resume+ | Right Resume | Career Booster | Resume Highlighter<br>
 			All Jobs-Walkin Jobs | Contract Jobs | Placement Jobs | Jobs for Women | Startup Jobs | International Jobs</p>
-      <br>
-      </strong>
+			<br>
    <footer>
    <p style="text-align: center;background-color: #333;color: white; font-size: 20px"><strong>copyrights</strong><br>
  <strong>Email: info@JobPortal.com</strong>  <br>

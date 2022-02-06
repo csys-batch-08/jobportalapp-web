@@ -41,7 +41,7 @@ Scanner sc = new Scanner(System.in);
  public List<PostJobModel> showJobs() throws ClassNotFoundException, SQLException {
 	 
 	 
-	 String query ="select company_id,post_id,job_title,salary,experience,category,post_date from posting_job";
+	 String query ="select company_id,post_id,job_title,salary,experience,category,post_date from posting_job order by post_date desc ";
 	 PostJobModel showJobs;
 	 List<PostJobModel> viewJobs= new ArrayList<PostJobModel>();
 	 Connection con=ConnectionUtil.getDBconnection();
@@ -59,6 +59,38 @@ Scanner sc = new Scanner(System.in);
 	  }
  
 	 return viewJobs;
+ }
+ 
+public List<PostJobModel> viewJobs(String email) throws ClassNotFoundException, SQLException {
+	 
+	 
+	 String query ="select p.company_id,p.post_id,p.job_title,p.salary,p.experience,p.category,p.post_date,c.email from posting_job p,Company_login c where p.company_id=c.company_id and c.email=? order by post_date desc ";
+	 PostJobModel showJobs=null;
+	 List<PostJobModel> view= new ArrayList<PostJobModel>();
+	 Connection con=ConnectionUtil.getDBconnection();
+	 PreparedStatement ps =con.prepareStatement(query);
+	 
+	ps.setString(1, email);
+	 ResultSet rs=ps.executeQuery();
+	 while(rs.next())
+	 {
+		 showJobs = new PostJobModel();
+		 showJobs.setCompanyId(rs.getInt(1));
+		 showJobs.setPostId(rs.getInt(2));
+		 showJobs.setJobTitle(rs.getString(3));
+		 showJobs.setIncome(rs.getInt(4));
+		 showJobs.setService(rs.getString(5));
+		 showJobs.setCategories(rs.getString(6));
+		 showJobs.setPostDate(rs.getDate(7));
+		 showJobs.setEmail(rs.getString(8));
+		 
+//		 showJobs= new PostJobModel(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getDate(7));
+	
+		 view.add(showJobs);
+	
+	  }
+ 
+	 return view;
  }
 
 public void deletePostJob(int postId ) throws ClassNotFoundException, SQLException {

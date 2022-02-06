@@ -45,7 +45,7 @@ try {
 		ApplyJobDaoImpl showJob = new   ApplyJobDaoImpl();
 		List<ApplyJob> appliedList = new ArrayList<ApplyJob>();
 		try {
-			appliedList=showJob.showApplicant();
+			appliedList=showJob.showApplicant(email);
 			
 			session.setAttribute("appliedList",appliedList );
 			response.sendRedirect("viewApplicant.jsp");

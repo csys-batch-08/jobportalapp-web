@@ -24,28 +24,28 @@ public class RecruiterViewJobsController extends HttpServlet {
         super();        
     }
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		HttpSession session=request.getSession();
-		String email  =  (String)session.getAttribute("Email");
-		System.out.println(email);
-		CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
-		int companyId;
-		
-		try {
+			HttpSession session=request.getSession();
+			String email  =  (String)session.getAttribute("Email");
 			
-			companyId = comDao.getEmployee(email);
-			session.setAttribute("companyId",companyId );
+			CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
+			int postId;
+		try {
+			postId = comDao.getEmploye(email);
+			session.setAttribute("postId",postId );
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		
-		PostJobDaoImpl showJob = new   PostJobDaoImpl();
-			List<PostJobModel> jobList = new ArrayList<PostJobModel>();
+		PostJobDaoImpl show = new   PostJobDaoImpl();
+			List<PostJobModel> job = new ArrayList<PostJobModel>();
+			
 			try {
-				jobList=showJob.showJobs();
-				session.setAttribute("jobList",jobList );
+				
+				job=show.viewJobs(email);
+				
+				session.setAttribute("job",job );
+				
 				response.sendRedirect("recruiterViewPostJobs.jsp");
-
+				
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}		
