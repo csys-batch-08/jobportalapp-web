@@ -145,9 +145,9 @@ public void deletePostJob(int postId )  {
 	}finally {
 		try {
 			con.close();
-			ps1.close();
-			ps2.close();
 			ps3.close();
+			ps2.close();
+			ps1.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

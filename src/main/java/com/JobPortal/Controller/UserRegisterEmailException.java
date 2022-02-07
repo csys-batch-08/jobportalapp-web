@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.JobPortal.Connection.ConnectionUtil;
+
 
 @WebServlet("/UserException")
 public class UserRegisterEmailException extends HttpServlet {
@@ -24,14 +26,17 @@ public class UserRegisterEmailException extends HttpServlet {
     }
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");  
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
+		String email = request.getParameter("email"); 
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
 		try{  
 		Class.forName("oracle.jdbc.driver.OracleDriver");  
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
-		PreparedStatement ps=con.prepareStatement("select first_Name,last_Name,user_Name,gender,email_Id,password,mobile_Number from user_info where email_Id=?");  
+		 con=ConnectionUtil.getDBconnection();   
+		 ps=con.prepareStatement("select first_Name,last_Name,user_Name,gender,email_Id,password,mobile_Number from user_info where email_Id=?");  
 		ps.setString(1, email);  
-		ResultSet rs=ps.executeQuery();  
+	    rs=ps.executeQuery();  
 		if(rs.next())
 		{
 			
@@ -48,6 +53,9 @@ public class UserRegisterEmailException extends HttpServlet {
 			e.printStackTrace();
 			System.out.println(e);
 
+		}
+		finally {
+			ConnectionUtil.close(con, ps, rs);
 		}
 	}
 

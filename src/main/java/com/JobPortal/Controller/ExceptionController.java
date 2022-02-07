@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.JobPortal.Connection.ConnectionUtil;
+
 
 @WebServlet("/exception")
 public class ExceptionController extends HttpServlet {
@@ -24,16 +26,18 @@ public class ExceptionController extends HttpServlet {
     }
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
 		String email = request.getParameter("email");  
 		try{  
 		Class.forName("oracle.jdbc.driver.OracleDriver");  
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
-		PreparedStatement ps=con.prepareStatement("select company_id,company_name,user_name,user_role,phone_number,location,email,password,register_date from Company_login where EMAIL=?");  
+	    con=ConnectionUtil.getDBconnection();  
+	    ps=con.prepareStatement("select company_id,company_name,user_name,user_role,phone_number,location,email,password,register_date from Company_login where EMAIL=?");  
 		ps.setString(1, email);  
-		ResultSet rs=ps.executeQuery(); 
-		System.out.println("abcd");
+	    rs=ps.executeQuery(); 
+		
 		if(rs.next())
 		{
 			
@@ -48,7 +52,9 @@ public class ExceptionController extends HttpServlet {
 			e.printStackTrace();
 			System.out.println(e);
 		} 
-		  
+		  finally {
+			  ConnectionUtil.close(con, ps, rs);
+		  }
 		
 	}
 
