@@ -34,25 +34,15 @@ public class AppliedJobController extends HttpServlet {
 		CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
 		int postId;
 		
-try {
-			
-	postId = comDao.getEmploye(email);
-			session.setAttribute("postId",postId );
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
+postId = comDao.getEmploye(email);
+		session.setAttribute("postId",postId );
 
 		JobStatusDaoImpl status = new   JobStatusDaoImpl();
 		List<JobStatusModel> update = new ArrayList<JobStatusModel>();
-		try {
-			update=status.updateStatus(email);
-			
-			 session.setAttribute("updates",update );
-			 response.sendRedirect("appliedJobStatus.jsp");
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		update=status.updateStatus(email);
+		
+		 session.setAttribute("updates",update );
+		 response.sendRedirect("appliedJobStatus.jsp");
 			}
 
 	

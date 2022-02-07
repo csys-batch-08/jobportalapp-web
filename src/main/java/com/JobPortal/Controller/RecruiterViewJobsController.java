@@ -29,26 +29,16 @@ public class RecruiterViewJobsController extends HttpServlet {
 			
 			CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
 			int postId;
-		try {
-			postId = comDao.getEmploye(email);
-			session.setAttribute("postId",postId );
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
+		postId = comDao.getEmploye(email);
+		session.setAttribute("postId",postId );
 		PostJobDaoImpl show = new   PostJobDaoImpl();
 			List<PostJobModel> job = new ArrayList<PostJobModel>();
 			
-			try {
-				
-				job=show.viewJobs(email);
-				
-				session.setAttribute("job",job );
-				
-				response.sendRedirect("recruiterViewPostJobs.jsp");
-				
-			} catch (ClassNotFoundException | SQLException e) {
-				e.printStackTrace();
-			}		
+			job=show.viewJobs(email);
+			
+			session.setAttribute("job",job );
+			
+			response.sendRedirect("recruiterViewPostJobs.jsp");		
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

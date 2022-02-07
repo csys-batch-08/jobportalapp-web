@@ -28,14 +28,10 @@ public class ViewJobsController extends HttpServlet {
 		
 		PostJobDaoImpl showJob = new   PostJobDaoImpl();
 		List<PostJobModel> jobList = new ArrayList<PostJobModel>();
-		try {
-			jobList=showJob.showJobs();
-			HttpSession session=request.getSession();
-			session.setAttribute("jobList",jobList );
-			response.sendRedirect("viewJobs.jsp");
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
+		jobList=showJob.showJobs();
+		HttpSession session=request.getSession();
+		session.setAttribute("jobList",jobList );
+		response.sendRedirect("viewJobs.jsp");
 		
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

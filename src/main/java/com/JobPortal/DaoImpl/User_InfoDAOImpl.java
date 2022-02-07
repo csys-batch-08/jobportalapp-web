@@ -16,14 +16,18 @@ public class User_InfoDAOImpl implements UserInfoInterface {
 
 		Scanner sc = new Scanner(System.in);
 		
-		public void insert(User_Info str)throws ClassNotFoundException, SQLException
+		public void insert(User_Info str)
 	
 		{
+			Connection con=null;
+			PreparedStatement stmt=null;
+			try {
+				
 			
-			Connection con= ConnectionUtil.getDBconnection();
+			 con= ConnectionUtil.getDBconnection();
 			String query = " insert into User_Info( first_name,  last_name, user_name,gender,email_Id,  password,  mobile_number)values (?,?,?,?,?,?,?)";
 			
-			PreparedStatement stmt= con.prepareStatement(query);
+		    stmt= con.prepareStatement(query);
 			
 			stmt.setString(1, str.getFirstname());
 			stmt.setString(2, str.getLastname());
@@ -34,18 +38,24 @@ public class User_InfoDAOImpl implements UserInfoInterface {
 			stmt.setLong(7, str.getMobilenumber());
 			
 			stmt.executeUpdate();
-			
+			}catch(Exception e) {
+				
+			}finally {
+				ConnectionUtil.close(con, stmt);
+			}
 		}
 
 			
-		public boolean login(String emailId, String Password ) throws ClassNotFoundException, SQLException {
-				
-
-		    Connection con = ConnectionUtil.getDBconnection();
+		public boolean login(String emailId, String Password )  {
+			
+			 Connection con=null;
+			 PreparedStatement stmt=null;
+			 try {
+		     con = ConnectionUtil.getDBconnection();
 				
 		    String query = "select first_Name,last_Name,user_Name,gender,email_Id,password,mobile_Number from User_info where email_id= ? and password= ? ";
 				
-		    PreparedStatement stmt = con.prepareStatement(query);
+		    stmt = con.prepareStatement(query);
 		    
 		    stmt.setString(1, emailId);
 			stmt.setString(2, Password);
@@ -60,5 +70,11 @@ if(i>0)
 				}else {
 						return false;
 				}
+			 }catch(Exception e) {
+				 
+			 }finally {
+				 ConnectionUtil.close(con, stmt);
+			 }
+			return false;
 	}
 		}

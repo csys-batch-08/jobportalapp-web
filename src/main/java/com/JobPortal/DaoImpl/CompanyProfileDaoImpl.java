@@ -18,13 +18,16 @@ public class CompanyProfileDaoImpl implements CompanyProfileInterface {
 
 	Scanner sc = new Scanner(System.in);
 	
-	public void insertCompanyProfile(CompanyModel str1)throws ClassNotFoundException, SQLException
+	public void insertCompanyProfile(CompanyModel str1)
 
-	{						
-		Connection con= ConnectionUtil.getDBconnection();
+	{	
+		Connection con=null;
+		PreparedStatement stmt=null;
+		try {
+		 con= ConnectionUtil.getDBconnection();
 		String queries = " insert into Company_login( company_id,company_name,  user_name,user_role, phone_number, location,email, password)values (?,?,?,?,?,?,?,?)";
 		
-		PreparedStatement stmt= con.prepareStatement(queries);
+		stmt= con.prepareStatement(queries);
 		
 		stmt.setInt(1, str1.getCompanyId());
 		stmt.setString(2, str1.getCompanyName());
@@ -37,19 +40,24 @@ public class CompanyProfileDaoImpl implements CompanyProfileInterface {
 		
 		
 		stmt.executeUpdate();
-		System.out.println("Company Profile Registered Successfully");		
+		}catch(Exception e) {
+			
+		}finally {
+			ConnectionUtil.close(con, stmt);		}
 	}
 	
-	public  boolean companyLogin(String email, String Password) throws ClassNotFoundException, SQLException {
+	public  boolean companyLogin(String email, String Password) {
 		
-				
-		    Connection con = ConnectionUtil.getDBconnection();
+		Connection con=null;
+		PreparedStatement stmt=null;
+		try {
+		    con = ConnectionUtil.getDBconnection();
 				
 		    String query = "select company_id,company_name,user_name,user_role,phone_number,location,email,password,register_date from Company_login where email= ? and password= ? ";
 				
-		    PreparedStatement stmt = con.prepareStatement(query);
+		     stmt = con.prepareStatement(query);
 		    
-		    System.out.println("Registered ");
+		    
 				
 		    stmt.setString(1, email);
 			stmt.setString(2, Password);
@@ -63,14 +71,23 @@ if(i>0)
 				}else {
 						return false;
 				}
+		}catch(Exception e) {
+			
+		}finally {
+			ConnectionUtil.close(con, stmt);
+		}
+		return false;
 	}
 
-	public void updateCompanyProfile (CompanyModel str11) throws ClassNotFoundException, SQLException {
+	public void updateCompanyProfile (CompanyModel str11)  {
 		
-		 Connection con=ConnectionUtil.getDBconnection();
+		Connection con=null;
+		PreparedStatement stmt=null;
+		try {
+		 con=ConnectionUtil.getDBconnection();
 		
 		String update = "update Company_login set  company_id = ?,company_name =?,  user_name =?,user_role =?, phone_number=?, location=?,email=? where  password=? ";
-		 PreparedStatement stmt = con.prepareStatement(update);
+		  stmt = con.prepareStatement(update);
 		 
 		 stmt.setInt(1, str11.getCompanyId());
 			stmt.setString(2, str11.getCompanyName());
@@ -85,18 +102,26 @@ if(i>0)
 		 int res = stmt.executeUpdate();
 
 			System.out.println(res + " is updated !!");
+		}catch(Exception e) {
+			
+		}finally {
+			ConnectionUtil.close(con, stmt);
+		}
 		 
 	}
 	
 
-	 public int getEmployee(String email) throws ClassNotFoundException, SQLException {
+	 public int getEmployee(String email){
 		 
-		 
+		 Connection con=null;
+		 PreparedStatement ps=null;
+		 List<CompanyModel> viewJobs=null;
+		 try {
 		 String query ="select company_id,company_name,user_name,user_role,phone_number,location,email,password,register_date from Company_login where email=?";
 		 CompanyModel showJobs;
-		 List<CompanyModel> viewJobs= new ArrayList<CompanyModel>();
-		 Connection con=ConnectionUtil.getDBconnection();
-		 PreparedStatement ps =con.prepareStatement(query);
+		 viewJobs= new ArrayList<CompanyModel>();
+		 con=ConnectionUtil.getDBconnection();
+		 ps =con.prepareStatement(query);
 		 ps.setString(1, email);
 		 ResultSet rs=ps.executeQuery();
 		 int companyId=0;
@@ -109,20 +134,31 @@ if(i>0)
 			 return rs.getInt(1);
 		
 		  }
+		 
+		 }catch(Exception e) {
+			 
+		 }finally {
+			 ConnectionUtil.close(con, ps);
+		 }
 	 
-		 return companyId;
+		 int companyId=0;
+		return companyId;
 	 }
 	
- public int getEmploye(String email) throws ClassNotFoundException, SQLException {
+ public int getEmploye(String email)  {
 		 
-		 
+	 List<CompanyModel> viewJob=null;
+	 Connection con=null;
+	 PreparedStatement ps=null;
+	 ResultSet rs=null;
+	 try {
 		 String query ="select c.company_id,c.email,p.post_id from Company_login c,posting_job p where c.company_id=p.company_id and c.email=?";
 		 CompanyModel showJob;
-		 List<CompanyModel> viewJob= new ArrayList<CompanyModel>();
-		 Connection con=ConnectionUtil.getDBconnection();
-		 PreparedStatement ps =con.prepareStatement(query);
+		  viewJob= new ArrayList<CompanyModel>();
+		  con=ConnectionUtil.getDBconnection();
+		ps =con.prepareStatement(query);
 		 ps.setString(1, email);
-		 ResultSet rs=ps.executeQuery();
+		 rs=ps.executeQuery();
 		 int postId=0;
 		
 		 if(rs.next())
@@ -133,8 +169,14 @@ if(i>0)
 			 return rs.getInt(3);
 		
 		  }
+	 }catch(Exception e) {
+		 
+	 }finally {
+		 ConnectionUtil.close(con, ps, rs);
+	 }
 	 
-		 return postId;
+		 int postId=0;
+		return postId;
 	 }
 	}
 

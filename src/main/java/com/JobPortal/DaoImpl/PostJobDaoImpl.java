@@ -19,14 +19,16 @@ public class PostJobDaoImpl implements PostJobInterface {
 	
 Scanner sc = new Scanner(System.in);
 	
-	public void postJobs(PostJobModel str2)throws ClassNotFoundException, SQLException
+	public void postJobs(PostJobModel str2)
 
 	{
-		
-		Connection con= ConnectionUtil.getDBconnection();
+		Connection con=null;
+		PreparedStatement stmt=null;
+		try {
+		 con= ConnectionUtil.getDBconnection();
 		String queries = " insert into posting_job( company_id,  job_title, salary,experience , category)values (?,?,?,?,?)";
 	
-		PreparedStatement stmt= con.prepareStatement(queries);
+		 stmt= con.prepareStatement(queries);
 		
 		stmt.setInt(1, str2.getCompanyId());
 		stmt.setString(2, str2.getJobTitle());
@@ -35,19 +37,27 @@ Scanner sc = new Scanner(System.in);
 		stmt.setString(5, str2.getCategories());
 					
 		stmt.executeUpdate();
-		
+		}catch(Exception e) {
+			
+		}finally {
+			ConnectionUtil.close(con, stmt);
+		}
 	}
 
- public List<PostJobModel> showJobs() throws ClassNotFoundException, SQLException {
+ public List<PostJobModel> showJobs()  {
 	 
-	 
+	 List<PostJobModel> viewJobs=null;
+	 Connection con=null;
+	 PreparedStatement ps=null;
+	 ResultSet rs=null;
+	 try {
 	 String query ="select company_id,post_id,job_title,salary,experience,category,post_date from posting_job order by post_date desc ";
 	 PostJobModel showJobs;
-	 List<PostJobModel> viewJobs= new ArrayList<PostJobModel>();
-	 Connection con=ConnectionUtil.getDBconnection();
-	 PreparedStatement ps =con.prepareStatement(query);
+	  viewJobs= new ArrayList<PostJobModel>();
+	con=ConnectionUtil.getDBconnection();
+	  ps =con.prepareStatement(query);
 	 
-	 ResultSet rs=ps.executeQuery();
+	  rs=ps.executeQuery();
 	 
 	
 	 while(rs.next())
@@ -57,21 +67,29 @@ Scanner sc = new Scanner(System.in);
 		 viewJobs.add(showJobs);
 	
 	  }
- 
+	 }catch(Exception e) {
+		 
+	 }finally {
+		 ConnectionUtil.close(con, ps, rs);
+	 }
 	 return viewJobs;
  }
  
-public List<PostJobModel> viewJobs(String email) throws ClassNotFoundException, SQLException {
+public List<PostJobModel> viewJobs(String email) {
 	 
-	 
+	 List<PostJobModel> view=null;
+	 Connection con=null;
+	 PreparedStatement ps=null;
+	 ResultSet rs=null;
+	 try {
 	 String query ="select p.company_id,p.post_id,p.job_title,p.salary,p.experience,p.category,p.post_date,c.email from posting_job p,Company_login c where p.company_id=c.company_id and c.email=? order by post_date desc ";
 	 PostJobModel showJobs=null;
-	 List<PostJobModel> view= new ArrayList<PostJobModel>();
-	 Connection con=ConnectionUtil.getDBconnection();
-	 PreparedStatement ps =con.prepareStatement(query);
+	  view= new ArrayList<PostJobModel>();
+	  con=ConnectionUtil.getDBconnection();
+	 ps =con.prepareStatement(query);
 	 
 	ps.setString(1, email);
-	 ResultSet rs=ps.executeQuery();
+	  rs=ps.executeQuery();
 	 while(rs.next())
 	 {
 		 showJobs = new PostJobModel();
@@ -89,13 +107,22 @@ public List<PostJobModel> viewJobs(String email) throws ClassNotFoundException, 
 		 view.add(showJobs);
 	
 	  }
+	 }catch(Exception e) {
+		 
+	 }finally {
+		 ConnectionUtil.close(con, ps, rs);
+	 }
  
 	 return view;
  }
 
-public void deletePostJob(int postId ) throws ClassNotFoundException, SQLException {
+public void deletePostJob(int postId )  {
+	Connection con=null;
+	PreparedStatement ps3=null;
+	PreparedStatement ps2=null;
+	 PreparedStatement ps1=null;
 	try {
-	 Connection con=ConnectionUtil.getDBconnection();
+	 con=ConnectionUtil.getDBconnection();
 	 
 	 String Query = "delete from posting_job where post_id ="+postId;
 	 String queries = "delete from apply_job where post_id ="+postId;
@@ -103,9 +130,9 @@ public void deletePostJob(int postId ) throws ClassNotFoundException, SQLExcepti
 	
 	 
 	 
-	 PreparedStatement ps3 =con.prepareStatement(querie);
-	 PreparedStatement ps2 =con.prepareStatement(queries);
-	 PreparedStatement ps1 =con.prepareStatement(Query);
+	 ps3 =con.prepareStatement(querie);
+	 ps2 =con.prepareStatement(queries);
+	 ps1 =con.prepareStatement(Query);
 	 
 	 
 	System.out.println(ps1.executeUpdate()+"post job row deleted");
@@ -115,15 +142,27 @@ public void deletePostJob(int postId ) throws ClassNotFoundException, SQLExcepti
 	catch(Exception e)
 	{
 		System.out.println(e.getMessage());
+	}finally {
+		try {
+			con.close();
+			ps1.close();
+			ps2.close();
+			ps3.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 } 	 
 
-	public void insertPostJobDao (PostJobModel str21) throws ClassNotFoundException, SQLException {
+	public void insertPostJobDao (PostJobModel str21)  {
 		
-		 Connection con=ConnectionUtil.getDBconnection();
+		Connection con =null;
+		PreparedStatement stmt=null;
+		try {
+		  con=ConnectionUtil.getDBconnection();
 		
 		String update = "update posting_job set job_title=?,salary=?,experience=?,category=? where company_id=? ";
-		 PreparedStatement stmt = con.prepareStatement(update);
+		  stmt = con.prepareStatement(update);
 		 
 		 stmt.setString(1, str21.getJobTitle());
 		 stmt.setInt(2, str21.getIncome());
@@ -134,23 +173,32 @@ public void deletePostJob(int postId ) throws ClassNotFoundException, SQLExcepti
 		 int res = stmt.executeUpdate();
 
 			System.out.println(res + " is updated !!");
-		 
+		}catch(Exception e) {
+			
+		}finally {
+			ConnectionUtil.close(con, stmt);
+		}
 	}
 	
 	
 
-public List<PostJobModel> SearchJobs(String Location) throws ClassNotFoundException, SQLException {
+public List<PostJobModel> SearchJobs(String Location) {
 	 
+	List<PostJobModel> viewJobs=null;
+	 Connection con=null;
+	 PreparedStatement ps=null;
+	 ResultSet rs=null;
 	 
+	 try {
 	 String query =  "select p.company_id,c.company_name,p.post_id,p.salary,p.job_title,c.location,p.experience  from posting_job p ,Company_login c\r\n"
 	 		+ "		 		where c.company_id=p.company_id and c.location = ?";
 	 PostJobModel showJobs;
-	 List<PostJobModel> viewJobs= new ArrayList<PostJobModel>();
-	 Connection con=ConnectionUtil.getDBconnection();
-	 PreparedStatement ps =con.prepareStatement(query);
+	  viewJobs= new ArrayList<PostJobModel>();
+	  con=ConnectionUtil.getDBconnection();
+	  ps =con.prepareStatement(query);
 	 
 	 ps.setString(1, Location);
-	 ResultSet rs=ps.executeQuery();
+	  rs=ps.executeQuery();
 	 
 	
 	 while(rs.next())
@@ -160,21 +208,29 @@ public List<PostJobModel> SearchJobs(String Location) throws ClassNotFoundExcept
 		 viewJobs.add(showJobs);
 	
 	  }
- 
+	 }catch(Exception e) {
+		 
+	 }finally{
+		 ConnectionUtil.close(con, ps, rs);
+	 }
 	 return viewJobs;
  }
-public List<PostJobModel> SearchExp(String Experience) throws ClassNotFoundException, SQLException {
+public List<PostJobModel> SearchExp(String Experience)  {
 	 
-	 
+	List<PostJobModel> viewJobs=null;
+	Connection con=null;
+	PreparedStatement ps=null;
+	 ResultSet rs=null;
+	 try {
 	 String query =  "select p.company_id,c.company_name,p.post_id,p.salary,p.job_title,c.location,p.experience  from posting_job p ,Company_login c\r\n"
 	 		+ "		 		where c.company_id=p.company_id and p.experience = ?";
 	 PostJobModel showJobs;
-	 List<PostJobModel> viewJobs= new ArrayList<PostJobModel>();
-	 Connection con=ConnectionUtil.getDBconnection();
-	 PreparedStatement ps =con.prepareStatement(query);
+	 viewJobs= new ArrayList<PostJobModel>();
+	 con=ConnectionUtil.getDBconnection();
+	  ps =con.prepareStatement(query);
 	 
 	 ps.setString(1, Experience);
-	 ResultSet rs=ps.executeQuery();
+	 rs=ps.executeQuery();
 	 
 	
 	 while(rs.next())
@@ -184,21 +240,31 @@ public List<PostJobModel> SearchExp(String Experience) throws ClassNotFoundExcep
 		 viewJobs.add(showJobs);
 	
 	  }
-
+	 }catch(Exception e) {
+		 
+	 }finally {
+		 ConnectionUtil.close(con, ps, rs);
+	 }
 	 return viewJobs;
 }
-public List<PostJobModel> SearchSal(int salary) throws ClassNotFoundException, SQLException {
+public List<PostJobModel> SearchSal(int salary)  {
 	 
+	List<PostJobModel> viewJobs=null;
+	Connection con=null;
+	 PreparedStatement ps=null;
+	 ResultSet rs=null;
+	 try {
+		 
 	 
 	 String query =  "select p.company_id,c.company_name,p.post_id,p.salary,p.job_title,c.location,p.experience  from posting_job p ,Company_login c\r\n"
 	 		+ "		 		where c.company_id=p.company_id and p.salary = ?";
 	 PostJobModel showJobs;
-	 List<PostJobModel> viewJobs= new ArrayList<PostJobModel>();
-	 Connection con=ConnectionUtil.getDBconnection();
-	 PreparedStatement ps =con.prepareStatement(query);
+	  viewJobs= new ArrayList<PostJobModel>();
+	  con=ConnectionUtil.getDBconnection();
+	  ps =con.prepareStatement(query);
 	 
 	 ps.setInt(1, salary);
-	 ResultSet rs=ps.executeQuery();
+	 rs=ps.executeQuery();
 	 
 	
 	 while(rs.next())
@@ -208,21 +274,29 @@ public List<PostJobModel> SearchSal(int salary) throws ClassNotFoundException, S
 		 viewJobs.add(showJobs);
 	
 	  }
-
+	 }catch(Exception e) {
+		 
+	 }finally{
+		 ConnectionUtil.close(con, ps, rs);
+	 }
 	 return viewJobs;
 }
-public List<PostJobModel> SearchCom(String company) throws ClassNotFoundException, SQLException {
+public List<PostJobModel> SearchCom(String company)  {
 	 
-	 
+	List<PostJobModel> viewJobs=null;
+	Connection con=null;
+	PreparedStatement ps=null;
+	 ResultSet rs=null;
+	 try {
 	 String query =  "select p.company_id,c.company_name,p.post_id,p.salary,p.job_title,c.location,p.experience  from posting_job p ,Company_login c\r\n"
 	 		+ "		 		where c.company_id=p.company_id and c.company_name = ?";
 	 PostJobModel showJobs;
-	 List<PostJobModel> viewJobs= new ArrayList<PostJobModel>();
-	 Connection con=ConnectionUtil.getDBconnection();
-	 PreparedStatement ps =con.prepareStatement(query);
+	  viewJobs= new ArrayList<PostJobModel>();
+	  con=ConnectionUtil.getDBconnection();
+	  ps =con.prepareStatement(query);
 	 
 	 ps.setString(1, company);
-	 ResultSet rs=ps.executeQuery();
+	  rs=ps.executeQuery();
 	 
 	
 	 while(rs.next())
@@ -232,7 +306,11 @@ public List<PostJobModel> SearchCom(String company) throws ClassNotFoundExceptio
 		 viewJobs.add(showJobs);
 	
 	  }
-
+	 }catch(Exception e) {
+		 
+	 }finally {
+		 ConnectionUtil.close(con, ps, rs);
+	 }
 	 return viewJobs;
 }
 
