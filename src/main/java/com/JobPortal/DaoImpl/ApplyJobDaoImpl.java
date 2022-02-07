@@ -18,12 +18,17 @@ import com.JobPortal.Model.PostJobModel;
 
 public class ApplyJobDaoImpl implements ApplyJobInterface{
 
-	public void applyJob(ApplyJob str3) throws ClassNotFoundException, SQLException {
+	public void applyJob(ApplyJob str3) 
+	
+	      {
+		Connection con=null;
+		PreparedStatement stmt=null;
 		
-			Connection con= ConnectionUtil.getDBconnection();
+		try {
+			 con= ConnectionUtil.getDBconnection();
 			String query = " insert into Apply_Job( post_id,  applicant_name,qualification,skill, age, email, password,address,phone_number)values (?,?,?,?,?,?,?,?,?)";
 			
-			PreparedStatement stmt= con.prepareStatement(query);
+			 stmt= con.prepareStatement(query);
 			
 			stmt.setInt(1, str3.getPostId());
 			stmt.setString(2, str3.getApplicantName());
@@ -38,6 +43,15 @@ public class ApplyJobDaoImpl implements ApplyJobInterface{
 			stmt.executeUpdate();
 			System.out.println("Job applied successfully");
 		}
+		
+		catch (Exception e){
+			
+					}
+		finally {
+			ConnectionUtil.close(con, stmt);
+		}
+		
+	      }
 			
 	 public List<ApplyJob> showApplicant(String email) throws ClassNotFoundException, SQLException {
 		 
