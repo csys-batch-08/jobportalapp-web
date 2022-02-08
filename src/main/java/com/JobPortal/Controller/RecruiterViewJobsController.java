@@ -23,7 +23,7 @@ public class RecruiterViewJobsController extends HttpServlet {
     public RecruiterViewJobsController() {
         super();        
     }
-		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
 			HttpSession session=request.getSession();
 			String email  =  (String)session.getAttribute("Email");
 			
@@ -38,7 +38,12 @@ public class RecruiterViewJobsController extends HttpServlet {
 			
 			session.setAttribute("job",job );
 			
-			response.sendRedirect("recruiterViewPostJobs.jsp");		
+			try {
+				response.sendRedirect("recruiterViewPostJobs.jsp");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

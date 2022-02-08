@@ -24,14 +24,19 @@ public class ViewJobsController extends HttpServlet {
        
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
 		
 		PostJobDaoImpl showJob = new   PostJobDaoImpl();
 		List<PostJobModel> jobList = new ArrayList<PostJobModel>();
 		jobList=showJob.showJobs();
 		HttpSession session=request.getSession();
 		session.setAttribute("jobList",jobList );
-		response.sendRedirect("viewJobs.jsp");
+		try {
+			response.sendRedirect("viewJobs.jsp");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

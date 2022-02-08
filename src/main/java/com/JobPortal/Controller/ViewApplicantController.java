@@ -26,7 +26,7 @@ public class ViewApplicantController extends HttpServlet {
        
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
 		
 		HttpSession session=request.getSession();
 		String email  =  (String)session.getAttribute("Email");
@@ -42,7 +42,12 @@ postId = comDao.getEmploye(email);
 		appliedList=showJob.showApplicant(email);
 		
 		session.setAttribute("appliedList",appliedList );
-		response.sendRedirect("viewApplicant.jsp");
+		try {
+			response.sendRedirect("viewApplicant.jsp");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

@@ -26,7 +26,7 @@ public class AppliedJobController extends HttpServlet {
     }
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
 
 		HttpSession session=request.getSession();
 		String email  =  (String)session.getAttribute("Email");
@@ -34,7 +34,7 @@ public class AppliedJobController extends HttpServlet {
 		CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
 		int postId;
 		
-postId = comDao.getEmploye(email);
+        postId = comDao.getEmploye(email);
 		session.setAttribute("postId",postId );
 
 		JobStatusDaoImpl status = new   JobStatusDaoImpl();
@@ -42,7 +42,12 @@ postId = comDao.getEmploye(email);
 		update=status.updateStatus(email);
 		
 		 session.setAttribute("updates",update );
-		 response.sendRedirect("appliedJobStatus.jsp");
+		 try {
+			response.sendRedirect("appliedJobStatus.jsp");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 			}
 
 	
