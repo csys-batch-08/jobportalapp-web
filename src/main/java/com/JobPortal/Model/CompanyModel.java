@@ -1,6 +1,8 @@
 package com.JobPortal.Model;
 
-public class CompanyModel {
+import java.io.Serializable;
+
+public class CompanyModel implements Serializable {
 
 	private int companyId;
 	private String companyName;

@@ -1,8 +1,9 @@
 package com.JobPortal.Model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class JobStatusModel {
+public class JobStatusModel implements Serializable {
 	
 	private int postID;
 	private int ApplicantID;

@@ -1,9 +1,10 @@
 package com.JobPortal.Model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 
-public class ApplyJob {
+public class ApplyJob implements Serializable {
 	
 	
 	private int postId;

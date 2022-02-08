@@ -1,6 +1,8 @@
 package com.JobPortal.Model;
 
-public class User_Info {
+import java.io.Serializable;
+
+public class User_Info implements Serializable {
 
 	private String firstname;
 	private String lastname;

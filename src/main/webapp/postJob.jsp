@@ -17,9 +17,7 @@
 <input type ="number" name = "salary" placeholder ="Enter Salary"  required><br><br>
 <input type ="text" name = "experience" placeholder="Enter Experience" pattern = "[0-9 ][A-Za-z ]{3,7}" required><br><br>
 <input type ="text" name = "category" placeholder="Enter Job Category" pattern = "[A-Za-z]{3,30}" required><br><br>
-
- <input type ="submit" style="background-color: red" value ="Post Job">
-   
+<input type ="submit" style="background-color: red" value ="Post Job">   
 </div>
 </form>>
 

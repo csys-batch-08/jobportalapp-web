@@ -1,10 +1,11 @@
 package com.JobPortal.Model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
 
-public class PostJobModel {
+public class PostJobModel implements Serializable {
 	
 	private int companyId;
 	private String jobTitle;
