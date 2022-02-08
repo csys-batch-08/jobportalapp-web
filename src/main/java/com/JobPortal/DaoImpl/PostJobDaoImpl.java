@@ -124,12 +124,9 @@ public void deletePostJob(int postId ) throws ClassNotFoundException, SQLExcepti
 	 String queries = "delete from apply_job where post_id ="+postId;
 	 String querie = " delete from job_status where post_id ="+postId;
 	
-	 
-	 
 	 PreparedStatement ps3 =con.prepareStatement(querie);
 	 PreparedStatement ps2 =con.prepareStatement(queries);
 	 PreparedStatement ps1 =con.prepareStatement(Query);
-	 
 	 
 	System.out.println(ps1.executeUpdate()+"post job row deleted");
 	System.out.println(ps2.executeUpdate()+"application deleted");
