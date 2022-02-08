@@ -116,27 +116,6 @@ public List<PostJobModel> viewJobs(String email) {
 	 return view;
  }
 
-public void deletePostJob(int postId ) throws ClassNotFoundException, SQLException {
-	try {
-	 Connection con=ConnectionUtil.getDBconnection();
-	 
-	 String Query = "delete from posting_job where post_id ="+postId;
-	 String queries = "delete from apply_job where post_id ="+postId;
-	 String querie = " delete from job_status where post_id ="+postId;
-	
-	 PreparedStatement ps3 =con.prepareStatement(querie);
-	 PreparedStatement ps2 =con.prepareStatement(queries);
-	 PreparedStatement ps1 =con.prepareStatement(Query);
-	 
-	System.out.println(ps1.executeUpdate()+"post job row deleted");
-	System.out.println(ps2.executeUpdate()+"application deleted");
-	System.out.println(ps3.executeUpdate()+"Job status deleted");
-	}
-	catch(Exception e)
-	{
-		System.out.println(e.getMessage());
-	}
-} 	 
 
 	public void insertPostJobDao (PostJobModel str21)  {
 		
