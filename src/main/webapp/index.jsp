@@ -6,6 +6,9 @@
 <meta charset="ISO-8859-1">
 <title>Home</title>
 <style>
+.marg{
+ margin: 0;
+}
 .topnav {
   background-color: #333;
   overflow: hidden;
@@ -30,13 +33,15 @@
   display: none;
 }
 * {box-sizing:border-box}
-
+#job{
+color: darkorange;
+}
 
 </style>
 </head>
-<body>
+<body class="marg">
 <div class="topnav" id="myTopnav" >
-   <a >JOB PORTAL</a>
+   <a id="job">JOB PORTAL</a>
   <a  href="companyRegister.jsp">Recruiter</a>  
   <a  href="userRegister.jsp">Candidate</a> 
    </div>
