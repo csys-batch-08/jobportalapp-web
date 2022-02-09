@@ -90,13 +90,12 @@ table.center {
 					<td class ="table-danger"><c:out value="${current.getCategories()}" /></td>		
 					<td class="table-primary"><c:out value="${current.getPostDate()}" /></td>
 		
-       <td class="table-warning"><a href="recruiterViewPostJobs.jsp?postId=<c:out value="${current.getPostId()}"/>">Delete</a></td>
+       <td class="table-warning"><a href="delete?postId=<c:out value="${current.getPostId()}"/>">Delete</a></td>
     
 </tr>
 </c:forEach>
-					</tbody>
-					
-		           </table>
+					</tbody>					
+		            </table>
 		     
 		          <a href="recruiter.jsp" ><button class="button button1" style="margin-left: 650px">Back</button></a>          
 	 

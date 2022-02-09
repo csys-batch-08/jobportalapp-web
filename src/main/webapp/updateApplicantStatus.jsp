@@ -36,8 +36,8 @@ height: 50px;
 <form action="UpdateApplicantStatus" method="post" >
 <div class="form-box">
 <h1>Applicant Status</h1>
-<input type ="number" name = "postId" value="${param.postId}"  placeholder = "Enter Post Id"   ><br><br>
-<input type ="number" name = "applicantId" value="${param.applicantId}" placeholder ="Enter Applicant Id"  required ><br><br>
+<input type ="number" name = "postId"  placeholder = "Enter Post Id" pattern="[0-9]{4,4}" autofocus><br><br>
+<input type ="number" name = "applicantId" placeholder ="Enter Applicant Id" pattern="[0-9]{3,3}" required ><br><br>
 
 <select name="status" id="status" class="drop">
   <option>Selected</option>

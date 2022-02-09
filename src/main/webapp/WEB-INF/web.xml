@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
 	<display-name>JobPortal</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteJobs</display-name>
+		<servlet-name>DeleteJobs</servlet-name>
+		<servlet-class>com.JobPortal.Controller.DeleteJobs</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeletePostJobSession</display-name>
+		<servlet-name>DeletePostJobSession</servlet-name>
+		<servlet-class>com.JobPortal.Controller.DeletePostJobSession</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteJobs</servlet-name>
+		<url-pattern>/DeleteJobs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeletePostJobSession</servlet-name>
+		<url-pattern>/DeletePostJobSession</url-pattern>
+	</servlet-mapping>
 	
 	
 	
