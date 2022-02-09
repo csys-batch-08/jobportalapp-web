@@ -8,6 +8,5 @@ public interface UserInfoInterface {
 	
 	public void insert(User_Info str) throws ClassNotFoundException, SQLException;
 	public boolean login(String Username, String Password) throws ClassNotFoundException, SQLException ;
-	
 
 }

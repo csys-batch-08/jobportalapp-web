@@ -8,7 +8,18 @@ public class ApplyJob implements Serializable {
 	
 	
 	private int postId;
-	private String applicantName;
+	private String applicantName;	
+	private String qualification;
+	private String skill;
+	private int age;
+	private String email;
+	private String password;
+	private String address;
+	private long phoneNumber;
+	private int applicantId;
+	private Date date;
+	private String status;
+	
 	public int getApplicantId() {
 		return applicantId;
 	}
@@ -21,18 +32,6 @@ public class ApplyJob implements Serializable {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	private String qualification;
-	private String skill;
-	private int age;
-	private String email;
-	private String password;
-	private String address;
-	private long phoneNumber;
-	private int applicantId;
-	private Date date;
-	private String status;
-	
-	
 	public String getStatus() {
 		return status;
 	}
@@ -171,7 +170,5 @@ public class ApplyJob implements Serializable {
 		this.applicantId = applicantId;
 		this.date = date;
 		this.status = status;
-	}
-	
-	
+	}	
 }

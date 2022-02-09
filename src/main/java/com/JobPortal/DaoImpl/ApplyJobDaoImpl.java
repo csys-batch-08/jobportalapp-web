@@ -18,40 +18,32 @@ import com.JobPortal.Model.PostJobModel;
 
 public class ApplyJobDaoImpl implements ApplyJobInterface{
 
-	public void applyJob(ApplyJob str3) 
-	
-	      {
+	public void applyJob(ApplyJob str3) {	   
 		Connection con=null;
-		PreparedStatement stmt=null;
-		
+		PreparedStatement stmt=null;		
 		try {
 			 con= ConnectionUtil.getDBconnection();
-			String query = " insert into Apply_Job( post_id,  applicant_name,qualification,skill, age, email, password,address,phone_number)values (?,?,?,?,?,?,?,?,?)";
-			
-			 stmt= con.prepareStatement(query);
-			
-			stmt.setInt(1, str3.getPostId());
-			stmt.setString(2, str3.getApplicantName());
-			stmt.setString(3, str3.getQualification());
-			stmt.setString(4, str3.getSkill());
-			stmt.setInt(5, str3.getAge());
-			stmt.setString(6, str3.getEmail());
-			stmt.setString(7, str3.getPassword());
-			stmt.setString(8, str3.getAddress());
-			stmt.setLong(9, str3.getPhoneNumber());
-			
-			stmt.executeUpdate();
-			System.out.println("Job applied successfully");
-		}
-		
+			 String query = " insert into Apply_Job( post_id,  applicant_name,qualification,skill, age, email, password,address,"
+			 	        	+ "phone_number)values (?,?,?,?,?,?,?,?,?)";			
+			 stmt= con.prepareStatement(query);			
+			 stmt.setInt(1, str3.getPostId());
+			 stmt.setString(2, str3.getApplicantName());
+			 stmt.setString(3, str3.getQualification());
+			 stmt.setString(4, str3.getSkill());
+			 stmt.setInt(5, str3.getAge());
+		     stmt.setString(6, str3.getEmail());
+			 stmt.setString(7, str3.getPassword());
+			 stmt.setString(8, str3.getAddress());
+			 stmt.setLong(9, str3.getPhoneNumber());			
+			 stmt.executeUpdate();			
+	    	}		
 		catch (Exception e){
 			
-					}
+				}
 		finally {
 			ConnectionUtil.close(con, stmt);
-		}
-		
-	      }
+		    }		
+   }
 			
 	 public List<ApplyJob> showApplicant(String email)  {
 		 

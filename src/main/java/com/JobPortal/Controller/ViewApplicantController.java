@@ -29,28 +29,24 @@ public class ViewApplicantController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
 		
 		HttpSession session=request.getSession();
-		String email  =  (String)session.getAttribute("Email");
-		
+		String email  =  (String)session.getAttribute("Email");		
 		CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
-		int postId;
-		
-postId = comDao.getEmploye(email);
+		int postId;		
+		postId = comDao.getEmploye(email);
 		session.setAttribute("postId",postId );
-
 		ApplyJobDaoImpl showJob = new   ApplyJobDaoImpl();
 		List<ApplyJob> appliedList = new ArrayList<ApplyJob>();
-		appliedList=showJob.showApplicant(email);
-		
+		appliedList=showJob.showApplicant(email);		
 		session.setAttribute("appliedList",appliedList );
 		try {
 			response.sendRedirect("viewApplicant.jsp");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		    } 
+		catch (IOException e) 
+			{			
 			e.printStackTrace();
-		}
+		    }
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
-
 }

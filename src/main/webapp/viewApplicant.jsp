@@ -4,7 +4,6 @@
 <%@page import="java.util.*"%>
 <%@page import="com.JobPortal.DaoImpl.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,12 +81,9 @@
 							value="${current.getPhoneNumber()}" /></td>
 					<td class="table-danger"><c:out value="${current.getSkill()}" /></td>
 					<td class="table-light">${current.getDate()}</td>
-
-
 					<td class="table-warning"><a
-						href="updateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}&postId=${current.getApplicantId()}&applicantId=${current.getPostId()}" />">Add</a></td>
-
-
+						href="updateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}
+						&postId=${current.getApplicantId()}&applicantId=${current.getPostId()}" />">Add</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

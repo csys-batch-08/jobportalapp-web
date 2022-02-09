@@ -37,28 +37,17 @@ public class ApplyJobController extends HttpServlet {
 			String Email =request.getParameter("emailid");
 			String Passsword = request.getParameter("password");
 			String location = request.getParameter("city");
-			String Phone = request.getParameter("mobilenumber");
-			
-
+			String Phone = request.getParameter("mobilenumber");	
 			int postId = Integer.parseInt(PostId);
 			int age = Integer.parseInt(Age);
-			long phonenumber = Long.parseLong(Phone);
-        
-			ApplyJob objapply = new ApplyJob(postId,ApplicantName,Qualification,Skills,age,Email,Passsword,location,phonenumber);
-         
-          ApplyJobDaoImpl applyDao = new ApplyJobDaoImpl();
-          applyDao.applyJob(objapply);
-			
-			   
-				
-				response.sendRedirect("applicantHomePage.jsp");
-				
-				
-			
-		} catch (Exception e) {
+			long phonenumber = Long.parseLong(Phone);        
+			ApplyJob objapply = new ApplyJob(postId,ApplicantName,Qualification,Skills,age,Email,Passsword,location,phonenumber);         
+            ApplyJobDaoImpl applyDao = new ApplyJobDaoImpl();
+            applyDao.applyJob(objapply);				   			
+			response.sendRedirect("applicantHomePage.jsp");			
+			}
+		catch (Exception e) {
 			System.out.println(e);
-		}
-	
+		    }	
 	}
-
 }

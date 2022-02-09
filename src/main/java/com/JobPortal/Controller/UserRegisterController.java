@@ -19,18 +19,12 @@ public class UserRegisterController extends HttpServlet {
     
     public UserRegisterController() {
         super();
-    }
-
-	
+    }	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	
-		{
-
+	}	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 			try {
 				String firstname = request.getParameter("firstname");
 				String lastname = request.getParameter("lastname");
@@ -39,23 +33,14 @@ public class UserRegisterController extends HttpServlet {
 				String mailid = request.getParameter("mailid");
 				String password = request.getParameter("password");
 				String  PhoneNumber =request.getParameter("mobilenumber");
-
-				long phonenumber = Long.parseLong(PhoneNumber);
-	        
-				
-	          User_Info objUserInfo = new User_Info(firstname,lastname,username,gender,mailid,password, phonenumber);
+				long phonenumber = Long.parseLong(PhoneNumber);       
+			    User_Info objUserInfo = new User_Info(firstname,lastname,username,gender,mailid,password, phonenumber);
 				User_InfoDAOImpl RegDao = new User_InfoDAOImpl();
-				RegDao.insert(objUserInfo);
-				
-				   response.sendRedirect("userLogin.jsp");
-				
-			} catch (Exception e) {
-				System.out.println(e);
-				
-			}
-		
-		
-				}
-	}
-
-
+				RegDao.insert(objUserInfo);				
+				response.sendRedirect("userLogin.jsp");				
+			   } 
+			catch (Exception e) {
+				System.out.println(e);				
+			   }	
+	  }
+}

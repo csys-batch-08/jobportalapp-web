@@ -28,27 +28,18 @@ public class ShowStatusController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		try {
-			String Email = request.getParameter("email");
-			System.out.println(Email);
-		  ApplyJobDaoImpl search = new ApplyJobDaoImpl();
-		  
-            List<ApplyJob> searchStatus = search.viewStatusApplicant(Email);
-            System.out.println(Email +"a");
-            
-           HttpSession session = request.getSession();
-            session.setAttribute("Emails",searchStatus );
-            System.out.println(Email +"b");
+			String Email = request.getParameter("email");			
+		    ApplyJobDaoImpl search = new ApplyJobDaoImpl();		  
+            List<ApplyJob> searchStatus = search.viewStatusApplicant(Email);         
+            HttpSession session = request.getSession();
+            session.setAttribute("Emails",searchStatus );           
             System.out.println(session.getAttribute("Emails"));
-            response.sendRedirect("showStatus.jsp");
-										
-		} catch (Exception e) {
+            response.sendRedirect("showStatus.jsp");										
+		    }
+		catch (Exception e) {
 			System.out.println(e);
-			
-		}
-
-		
-			}
-
+		    }	
+}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

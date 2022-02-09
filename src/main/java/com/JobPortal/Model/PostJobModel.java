@@ -111,7 +111,4 @@ public class PostJobModel implements Serializable {
 		this.location = location;
 		this.service= service;
 	}
-	
-	
-
 }

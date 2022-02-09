@@ -15,10 +15,7 @@ public class JobStatusModel implements Serializable {
 	private Date appliedDate;
 	private String applicantName;
 	private String address;
-	private String skill;
-	
-	
-	
+	private String skill;	
 	
 	public int getCompanyId() {
 		return companyId;
@@ -100,7 +97,4 @@ public class JobStatusModel implements Serializable {
 	public String toString() {
 		return "JobStatusModel [postID=" + postID + ", ApplicantID=" + ApplicantID + ", status=" + status + "]";
 	}
-	
-	
-
 }

@@ -11,11 +11,8 @@ public class CompanyModel implements Serializable {
 	private long phoneNumber = 0;
 	private String location;
 	private String email;
-	private String password;
-	
-	private int postId;
-	
-	
+	private String password;	
+	private int postId;	
 	
 	public int getPostId() {
 		return postId;
@@ -98,10 +95,5 @@ public class CompanyModel implements Serializable {
 		this.companyId = companyId;
 		this.email = email;
 		this.postId = postId;
-	}
-	
-	
-	
-	
-		
+	}		
 }

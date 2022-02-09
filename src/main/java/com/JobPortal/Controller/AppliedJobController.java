@@ -18,8 +18,7 @@ import com.JobPortal.Model.JobStatusModel;
 
 @WebServlet("/AppliedJobControl")
 public class AppliedJobController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+	private static final long serialVersionUID = 1L;      
     
     public AppliedJobController() {
         super();
@@ -29,26 +28,23 @@ public class AppliedJobController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
 
 		HttpSession session=request.getSession();
-		String email  =  (String)session.getAttribute("Email");
-		System.out.println(email);
+		String email  =  (String)session.getAttribute("Email");		
 		CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
-		int postId;
-		
+		int postId;		
         postId = comDao.getEmploye(email);
 		session.setAttribute("postId",postId );
-
 		JobStatusDaoImpl status = new   JobStatusDaoImpl();
 		List<JobStatusModel> update = new ArrayList<JobStatusModel>();
-		update=status.updateStatus(email);
-		
+		update=status.updateStatus(email);		
 		 session.setAttribute("updates",update );
 		 try {
 			response.sendRedirect("appliedJobStatus.jsp");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		     } 
+		 catch (IOException e)
+		     {			
 			e.printStackTrace();
-		}
-			}
+		     }
+ }
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

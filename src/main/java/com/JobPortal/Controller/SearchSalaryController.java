@@ -25,28 +25,19 @@ public class SearchSalaryController extends HttpServlet {
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
    		try {
-		String salary =request.getParameter("salary");
-		
-		
-		
-	  PostJobDaoImpl search = new PostJobDaoImpl();
-	  
-        List<PostJobModel> searchlist = search.SearchSal(Integer.parseInt(salary));
-        
-        
-       HttpSession session = request.getSession();
-        session.setAttribute("salary",searchlist );
-        
-        response.sendRedirect("searchSalary.jsp");
-		
-	} catch (Exception e) {
-		System.out.println(e);
-		
-	}
-
+		     String salary =request.getParameter("salary");			
+	         PostJobDaoImpl search = new PostJobDaoImpl();	  
+	         List<PostJobModel> searchlist = search.SearchSal(Integer.parseInt(salary));       
+        	 HttpSession session = request.getSession();
+	         session.setAttribute("salary",searchlist );        
+             response.sendRedirect("searchSalary.jsp");		
+	         } 
+   		catch (Exception e) {
+   			 System.out.println(e);		
+   			 }
 		}
 }
 

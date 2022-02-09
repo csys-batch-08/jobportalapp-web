@@ -25,31 +25,19 @@ public class SearchExperienceController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	}
-
-	
+	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 	   		try {
-			String Experience = request.getParameter("experience");
-			
-			
-		  PostJobDaoImpl search = new PostJobDaoImpl();
-		  
-            List<PostJobModel> searchlist = search.SearchExp(Experience);
-            
-            
-           HttpSession session = request.getSession();
-            session.setAttribute("Experience",searchlist );
-            
-            response.sendRedirect("searchExperience.jsp");
-			
-		} catch (Exception e) {
-			System.out.println(e);
-			
-		}
-
-	
+			     String Experience = request.getParameter("experience");		
+	     		 PostJobDaoImpl search = new PostJobDaoImpl();
+	             List<PostJobModel> searchlist = search.SearchExp(Experience);           
+                 HttpSession session = request.getSession();
+                 session.setAttribute("Experience",searchlist );
+                 response.sendRedirect("searchExperience.jsp");			
+		         } 
+	   		catch (Exception e) {
+			     System.out.println(e);			
+	             }	
 			}
 }
 

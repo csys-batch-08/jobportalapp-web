@@ -30,28 +30,19 @@ public class SearchLocationController extends HttpServlet {
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		try {
-			String Location = request.getParameter("location");
-			
-		  PostJobDaoImpl search = new PostJobDaoImpl();
-		  
-            List<PostJobModel> searchlist = search.SearchJobs(Location);
-            
-            
-           HttpSession session = request.getSession();
-            session.setAttribute("Locations",searchlist );
-            
-            response.sendRedirect("searchLocation.jsp");
-										
-		} catch (Exception e) {
+			String Location = request.getParameter("location");			
+		    PostJobDaoImpl search = new PostJobDaoImpl();		  
+            List<PostJobModel> searchlist = search.SearchJobs(Location);           
+            HttpSession session = request.getSession();
+            session.setAttribute("Locations",searchlist );            
+            response.sendRedirect("searchLocation.jsp"); 										
+	    	} 
+		catch (Exception e) {
 			System.out.println(e);
-			
-		}
-
-		
-			}
+			}	
+	 }
 }
 

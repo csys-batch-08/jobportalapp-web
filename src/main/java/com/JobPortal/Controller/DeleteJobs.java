@@ -14,36 +14,32 @@ import com.JobPortal.DaoImpl.PostJobDaoImpl;
 @WebServlet("/delete")
 public class DeleteJobs extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-    public DeleteJobs() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public DeleteJobs() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		try {
-		String post = request.getParameter("postId");
-		System.out.println(post);
-		int PostID = Integer.parseInt(post);
-		System.out.println(PostID);
-		PostJobDaoImpl del = new PostJobDaoImpl();
-		
+			String post = request.getParameter("postId");			
+			int PostID = Integer.parseInt(post);			
+			PostJobDaoImpl del = new PostJobDaoImpl();
 			del.deletePostJob(PostID);
 			response.sendRedirect("recruiter.jsp");
-		} catch (ClassNotFoundException e) {
-			
+		    } 
+		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		} catch (SQLException e) {
-			
+		} 
+		catch (SQLException e) {
 			e.printStackTrace();
-		}catch (Exception e) {
-			
+		} 
+		catch (Exception e) {
 		}
 	}
 
-	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-}
+	}
 }

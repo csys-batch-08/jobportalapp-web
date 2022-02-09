@@ -37,28 +37,18 @@ public class PostJobController extends HttpServlet {
 			String JobTitle = request.getParameter("jobtitle");
 			String EnterSalary = request.getParameter("salary");
 			String EnterExperience = request.getParameter("experience");
-			String JobCategory = request.getParameter("category");
-			
-
+			String JobCategory = request.getParameter("category");	
 			int companyid = Integer.parseInt(companyid1);
 			int salary = Integer.parseInt(EnterSalary);
-        
-			int postId =0;
+   			int postId =0;
 			Date postDate = null;
-			PostJobModel objpost = new PostJobModel(companyid,postId,JobTitle,salary,EnterExperience,JobCategory,postDate);
-         
-          PostJobDaoImpl postDao = new PostJobDaoImpl();
-          postDao.postJobs(objpost);
-			
-				
-				response.sendRedirect("recruiter.jsp");		
-							
-		} catch (Exception e) {
+			PostJobModel objpost = new PostJobModel(companyid,postId,JobTitle,salary,EnterExperience,JobCategory,postDate);         
+            PostJobDaoImpl postDao = new PostJobDaoImpl();
+            postDao.postJobs(objpost);		
+			response.sendRedirect("recruiter.jsp");									
+		   }
+		catch (Exception e) {
 			System.out.println(e);
-		}
-	
-	
-			}
+		   }
 	}
-
-
+}

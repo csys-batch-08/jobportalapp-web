@@ -25,22 +25,16 @@ public class SearchCompanyController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
    		try {
-		String company = request.getParameter("company");
-				
-	  PostJobDaoImpl search = new PostJobDaoImpl();
-	  
-        List<PostJobModel> searchlist = search.SearchCom(company);
-                
-       HttpSession session = request.getSession();
-        session.setAttribute("company",searchlist );
-        
-        response.sendRedirect("searchCompany.jsp");
-		
-	} catch (Exception e) {
+		String company = request.getParameter("company");				
+	    PostJobDaoImpl search = new PostJobDaoImpl();	  
+        List<PostJobModel> searchlist = search.SearchCom(company);                
+        HttpSession session = request.getSession();
+        session.setAttribute("company",searchlist );        
+        response.sendRedirect("searchCompany.jsp");		
+	        }
+   		catch (Exception e) {
 		System.out.println(e);		
-	}
-		System.out.println("welcome");
-	
+	        }
 		}
 }
 

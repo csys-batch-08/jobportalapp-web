@@ -11,15 +11,11 @@ public class ConnectionUtil {
 
 public static Connection getDBconnection() throws ClassNotFoundException, SQLException	{
 		
-		Class.forName("oracle.jdbc.driver.OracleDriver");  
-		    
+		Class.forName("oracle.jdbc.driver.OracleDriver");  		    
 		Connection con=DriverManager.getConnection(  
-		"jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
-		  
-		return con; 
-		
+		"jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  		  
+		return con; 		
 		}
-
 public static void close(Connection connection, PreparedStatement pst, ResultSet rs) {
 	try {
 		if (rs != null) {

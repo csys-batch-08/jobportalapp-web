@@ -25,28 +25,23 @@ public class RecruiterViewJobsController extends HttpServlet {
     }
 		protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
 			HttpSession session=request.getSession();
-			String email  =  (String)session.getAttribute("Email");
-			
+			String email  =  (String)session.getAttribute("Email");			
 			CompanyProfileDaoImpl comDao=new CompanyProfileDaoImpl();
 			int postId;
-		postId = comDao.getEmploye(email);
-		session.setAttribute("postId",postId );
-		PostJobDaoImpl show = new   PostJobDaoImpl();
-			List<PostJobModel> job = new ArrayList<PostJobModel>();
-			
-			job=show.viewJobs(email);
-			
-			session.setAttribute("job",job );
-			
+		    postId = comDao.getEmploye(email);
+		    session.setAttribute("postId",postId );
+		    PostJobDaoImpl show = new   PostJobDaoImpl();
+			List<PostJobModel> job = new ArrayList<PostJobModel>();			
+			job=show.viewJobs(email);			
+			session.setAttribute("job",job );			
 			try {
 				response.sendRedirect("recruiterViewPostJobs.jsp");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			    }
+			catch (IOException e) {				
 				e.printStackTrace();
-			}		
+			    }		
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
-
 }

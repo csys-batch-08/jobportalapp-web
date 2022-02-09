@@ -41,29 +41,18 @@ public class CompanyRegisterController extends HttpServlet {
 			String location = request.getParameter("location");
 			String email = request.getParameter("mailid");
 			String  password =request.getParameter("password");
-
 			int companyid = Integer.parseInt(companyid1);
-			long phonenumber = Long.parseLong(mobilenumber);
-        
-			
-          CompanyModel objcompanymodel = new CompanyModel(companyid,companyname,username,userrole,phonenumber,location,email, password);
-          CompanyProfileDaoImpl comDao = new CompanyProfileDaoImpl();
-			comDao.insertCompanyProfile(objcompanymodel);
-			
-			  
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("companyLogin.jsp");
-				requestDispatcher.forward(request, response);
-				
-				
-			
-		} catch (Exception e) {
-			System.out.println(e);
-			
-		}
-
-			
-		
-			}
+			long phonenumber = Long.parseLong(mobilenumber);      
+		    CompanyModel objcompanymodel = new CompanyModel(companyid,companyname,username,userrole,phonenumber,location,email, password);
+            CompanyProfileDaoImpl comDao = new CompanyProfileDaoImpl();
+			comDao.insertCompanyProfile(objcompanymodel);		
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("companyLogin.jsp");
+			requestDispatcher.forward(request, response);	
+		    }
+		catch (Exception e) {
+			System.out.println(e);			
+	    	}		
 	}
+}
 
 

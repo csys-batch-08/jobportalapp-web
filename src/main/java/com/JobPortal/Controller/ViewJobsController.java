@@ -33,14 +33,12 @@ public class ViewJobsController extends HttpServlet {
 		session.setAttribute("jobList",jobList );
 		try {
 			response.sendRedirect("viewJobs.jsp");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		    }
+		catch (IOException e) {			
 			e.printStackTrace();
-		}
-		
+		    }		
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
-
 }

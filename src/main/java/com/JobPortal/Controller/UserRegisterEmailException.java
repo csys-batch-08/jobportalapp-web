@@ -23,45 +23,35 @@ public class UserRegisterEmailException extends HttpServlet {
     
     public UserRegisterEmailException() {
         super();
-    }
-
-	
+    }	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
 		String email = request.getParameter("email"); 
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		try{  
-		Class.forName("oracle.jdbc.driver.OracleDriver");  
+	    try{  
+		 Class.forName("oracle.jdbc.driver.OracleDriver");  
 		 con=ConnectionUtil.getDBconnection();   
-		 ps=con.prepareStatement("select first_Name,last_Name,user_Name,gender,email_Id,password,mobile_Number from user_info where email_Id=?");  
-		ps.setString(1, email);  
-	    rs=ps.executeQuery();  
-		if(rs.next())
-		{
-			
+		 ps=con.prepareStatement("select first_Name,last_Name,user_Name,gender,email_Id,password,"
+		 		                 + "mobile_Number from user_info where email_Id=?");  
+		 ps.setString(1, email);  
+	     rs=ps.executeQuery();  
+		  if(rs.next())
+		   {			
 			PrintWriter write = response.getWriter();
-			write.println("Email id Already Registered");
-			System.out.println(email);
-
-		}  
-		}
+			write.println("Email id Already Registered");	
+     	   }  
+		   }
 		catch(Exception e)
-		{
-			
-
+		   {	
 			e.printStackTrace();
 			System.out.println(e);
-
-		}
-		finally {
+	       }
+		finally 
+		   {
 			ConnectionUtil.close(con, ps, rs);
-		}
-	}
-
-	
+		   }
+ }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
-
 }

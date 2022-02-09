@@ -11,6 +11,7 @@ public class User_Info implements Serializable {
 	private String emailId;
 	private String password;
 	private long mobilenumber ;
+	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -72,8 +73,5 @@ public class User_Info implements Serializable {
 	public String toString() {
 		return "User_Info [firstname=" + firstname + ", lastname=" + lastname + ", username=" + username + ", gender="
 				+ gender + ", emailId=" + emailId + ", password=" + password + ", mobilenumber=" + mobilenumber + "]";
-	}
-	
-	
+	}	
 }
-
