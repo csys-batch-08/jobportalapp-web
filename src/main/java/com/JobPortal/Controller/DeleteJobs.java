@@ -21,12 +21,13 @@ public class DeleteJobs extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
 		String post = request.getParameter("postId");
 		System.out.println(post);
 		int PostID = Integer.parseInt(post);
 		System.out.println(PostID);
 		PostJobDaoImpl del = new PostJobDaoImpl();
-		try {
+		
 			del.deletePostJob(PostID);
 			response.sendRedirect("recruiter.jsp");
 		} catch (ClassNotFoundException e) {
