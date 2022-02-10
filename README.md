@@ -20,7 +20,7 @@ Password   :ber@12
 
 1.Recruiter can Post Job
 
-2.Recruiter can Remove Job (also delete the applicant applied and job status)
+2.Recruiter can Remove Job 
 
 3.Recruiter can View Applicant
 
