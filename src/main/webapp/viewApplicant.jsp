@@ -5,6 +5,7 @@
 <%@page import="com.JobPortal.DaoImpl.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,8 +60,6 @@
 				<th>Add Status</th>
 			</tr>
 		</thead>
-		<br>
-		<br>
 		<tbody>
 			<c:forEach items="${appliedList}" var="current">
 				<c:set var="i" value="${i+1 }" />
@@ -79,8 +78,9 @@
 							value="${current.getAddress()}" /></td>
 					<td class="table-secondary"><c:out
 							value="${current.getPhoneNumber()}" /></td>
-					<td class="table-danger"><c:out value="${current.getSkill()}" /></td>
-					<td class="table-light">${current.getDate()}</td>
+					<td class="table-danger"><c:out value="${current.getSkill()}" /></td>					
+					<td><fmt:formatDate value="${current.getDate()}"
+							pattern="dd-MM-yyyy" /></td>
 					<td class="table-warning"><a
 						href="updateApplicantStatus.jsp?postId=<c:out value="${current.getApplicantId()}
 						&postId=${current.getApplicantId()}&applicantId=${current.getPostId()}" />">Add</a></td>

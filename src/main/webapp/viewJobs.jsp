@@ -4,6 +4,7 @@
 <%@page import="java.util.*"%>
 <%@page import="com.JobPortal.DaoImpl.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,6 @@
 }
 </style>
 <body>
-
 	<table border="2" id="alljobs" class="table">
 		<h1 style="text-align: center">
 			<strong>Job List</strong>
@@ -69,7 +69,8 @@
 							value="${current.getService()}" /></td>
 					<td class="table-danger"><c:out
 							value="${current.getCategories()}" /></td>
-					<td class="warning"><c:out value="${current.getPostDate()}" /></td>
+					<td><fmt:formatDate value="${current.getPostDate()}"
+							pattern="dd-MM-yyyy" /></td>
 					<td><a
 						href="applyJob.jsp?postid=<c:out value="${current.getPostId()}&postId=${current.getPostId()}" />"
 						class="table-light">Apply</a></td>
@@ -79,6 +80,5 @@
 	</table>
 	<a href="applicantHomePage.jsp"><button class="button button1"
 			style="margin-left: 650px">Back</button></a>
-
 </body>
 </html>

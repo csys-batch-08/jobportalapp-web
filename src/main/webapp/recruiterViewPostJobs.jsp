@@ -4,11 +4,10 @@
 <%@page import="java.util.*"%>
 <%@page import="com.JobPortal.Model.CompanyModel"%>
 <%@page import="com.JobPortal.Model.PostJobModel"%>
-
 <%@page import="com.JobPortal.DaoImpl.CompanyProfileDaoImpl"%>
 <%@page import="com.JobPortal.DaoImpl.PostJobDaoImpl"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,17 +35,14 @@
 	z-index: -1;
 	display: block;
 }
-
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
-
 table.center {
 	margin-left: 300px;
 	margin-right: auto;
 }
-
 .button {
 	border: none;
 	color: black;
@@ -58,7 +54,6 @@ table.center {
 	margin: 4px 2px;
 	cursor: pointer;
 }
-
 .button1 {
 	background-color: lightblue;
 }
@@ -102,8 +97,8 @@ table.center {
 							value="${current.getService()}" /></td>
 					<td class="table-danger"><c:out
 							value="${current.getCategories()}" /></td>
-					<td class="table-primary"><c:out
-							value="${current.getPostDate()}" /></td>
+					<td><fmt:formatDate value="${current.getPostDate()}"
+							pattern="dd-MM-yyyy" /></td>
 					<td class="table-warning"><a
 						href="delete?postId=<c:out value="${current.getPostId()}"/>">Delete</a></td>
 				</tr>

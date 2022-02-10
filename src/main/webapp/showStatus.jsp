@@ -4,6 +4,7 @@
 <%@page import="java.util.*"%>
 <%@page import="com.JobPortal.DaoImpl.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,6 @@
 	margin: 4px 2px;
 	cursor: pointer;
 }
-
 .button1 {
 	background-color: lightblue;
 }
@@ -64,8 +64,8 @@
 							value="${current.getPhoneNumber()}" /></td>
 					<td class="table-active"><c:out
 							value="${current.getApplicantId()}" /></td>
-					<td class="table-secondary"><c:out
-							value="${current.getDate()}" /></td>
+					<td><fmt:formatDate value="${current.getDate()}"
+							pattern="dd-MM-yyyy" /></td>
 					<td class="table-warning"><c:out
 							value="${current.getStatus()}" /></td>
 				</tr>
